@@ -24,8 +24,8 @@
 		li { 
 			float:left; margin-left:30px; 
 			a {
-				display:block; color:#EAEAEA; padding: 15px 20px; position:relative;
-			    
+				display:block; color:#EAEAEA; padding: 15px 20px; position:relative; box-shadow: 0px -10px 7px -7px rgba(253, 202, 46, 0) inset;
+			    @include transition(all .3s ease-in .1s);
 			    &:before {
 			    	@include transition(all .3s ease-in);
 			    	content:""; display:block; position:absolute; left:50%; bottom:0; 
@@ -33,14 +33,14 @@
 			    }
 
 			    &:hover {
-			    	color: $first_color_Yellow;
+			    	color: $first_color_Yellow; box-shadow: 0px -10px 7px -7px #FDCA2E inset;
 				    &:before {
 					   	width:100%; left:0; color: $first_color_Yellow
 					}
 				}
 
 				&.active {
-			    	color: $first_color_Yellow; font-weight: 600;
+			    	color: $first_color_Yellow; font-weight: 600; box-shadow: 0px -10px 7px -7px #FDCA2E inset;
 				    &:before {
 					   	width:100%; left:0; color: $first_color_Yellow
 					}
