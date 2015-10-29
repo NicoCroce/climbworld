@@ -15,3 +15,40 @@
 // -------------------------------------
 //   Base
 // -------------------------------------
+
+.main-section--home {
+	.content-carousel {
+		position: relative; height: 300px; width: 620px; margin-top: 30px; margin-left: 30px; 
+		.carousel {
+			background: #797979; overflow: hidden;
+			.mask {
+				width: calc(100% * 3.1);
+				&.img0-selected {
+					div { @include translate3d(0, 0, 0); }
+				}
+				&.img1-selected {
+					div { @include translate3d(-100%, 0, 0); }
+				}
+				&.img2-selected {
+					div { @include translate3d(-200%, 0, 0); }
+				}
+				div {
+					width: 620px; height: 300px; display: inline-block; background-size: cover; @include transition (all, .4s ease-in); margin-right: -7px;
+					&.img1 { background: url(../img/img-1.jpg); background-size: cover; background-repeat: no-repeat;}
+					&.img2 { background: url(../img/img-1.jpg); background-size: cover; background-repeat: no-repeat;}
+					&.img3 { background: url(../img/img-1.jpg); background-size: cover; background-repeat: no-repeat;}
+				}
+			}
+		}
+		.controllers {
+			position: absolute; right: -20px; top: calc(50% - 20px);
+			.prev, .next {  
+				width: 40px; height: 40px; background: #4A4A4A; border: 1px solid #404040; color: #B7B7B7; text-align: center; line-height: 2.2; font-weight: bold;
+				@include transition (all .2s ease-in);
+				&:hover { background: #888686; cursor: pointer; @include scale3d(1.03 1.03 1.03); background: #fdca2e; color: #000000; }
+			}
+		}
+	}
+}
+
+.triangulo-top { width: 0; height: 0; border-bottom: 10px solid #000000; border-right: 20px solid transparent; position: absolute; left: 50%; top: -10px; }
