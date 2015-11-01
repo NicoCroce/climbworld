@@ -17,10 +17,12 @@
 // -------------------------------------
 
 h1.centered-title { 
-	text-align: center; margin: 40px 0; font-size: 30px;
+	text-align: center; margin: 40px 0; font-size: toem(30px); text-transform: uppercase;
 	&:before { content: ""; border: 1px solid; position: absolute; width: 30%; left: 0; margin-top: 23px; }
 	&:after { content: ""; border: 1px solid; position: absolute; width: 30%; right: 0; margin-top: 23px; }
 }
+
+body { background: #EBEBE8; }
 
 .main-section--home {
 	width: 90%; margin: 0 auto;
@@ -80,3 +82,19 @@ h1.centered-title {
 		}
 	}
 }
+
+//most important
+.list-products .product-element.most-important { @include column(1/4, $gutter: 2, $cycle: 4); }
+
+
+//*****************************************************************************************************************************
+//											COMPANY
+//*****************************************************************************************************************************
+	
+.block-text {
+	width: 60%; margin: 5%;
+	.title-company-section { font-size: toem(30px); text-transform: uppercase; margin-bottom: 30px; }
+	.text-company { line-height: 2; }
+}
+
+//*****************************************************************************************************************************

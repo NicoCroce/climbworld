@@ -1,11 +1,12 @@
 "use strict";
 //******************************************    seccion variables    ******************************************
 	var imgIndex = 1;
+	var sectionName = "";
 //**********************************************************************************************
 
 //******************************************    onLoad    ******************************************
 jQuery(document).ready(function($) {
-	$('#headerSection').load('header.html');
+	// $('#headerSection').load('header.html');
 	$('#footerSection').load('footer.html');
 	$('#contentSection').load('home.html');
 
@@ -52,6 +53,44 @@ jQuery(document).ready(function($) {
 		}
 		
 	});
+
+
+//*****************************************************************************************************************************
+//											SECCIONES
+//*****************************************************************************************************************************
+
+	if (window.location.hash !== "") {
+        var str = window.location.hash;
+        str = str.replace("#", "");
+        selectSection(str, false);
+    }
+
+    $(document).on('click', '.bt-section', function(){
+    	event.preventDefault();
+        selectSection($(this), true, event);
+    });
+
+    function selectSection(elemento, seleccionado, event) {
+    	$('.bt-section').removeClass('active');
+        // var subTitle = "";
+        if (seleccionado) {
+            // subTitle = elemento.attr('subtitle');
+            sectionName = elemento.attr('id') + '.html';
+            window.location.hash = elemento.attr('id');
+            elemento.addClass('active');
+        } else {
+            // subTitle = $('#' + elemento).attr('subtitle');
+            sectionName = elemento + '.html';
+            window.location.hash = elemento;
+            $("#"+elemento).addClass('active');
+        }
+
+        $('#contentSection').load(sectionName);
+    }
+
+//*****************************************************************************************************************************
+
+	
 });
 
 //**********************************************************************************************
