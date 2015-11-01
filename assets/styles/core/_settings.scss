@@ -28,7 +28,8 @@ $base_font-weight: 						400;
 $base_font-family: 						Arial, "Helvetica Neue", Helvetica, sans-serif;
 $base_font: 									$base_font-weight toem($base_font-size) $base_font-family;
 
-
+$width_wrapper: 90%;
+$width_wrapper_header: 5%; //  (100% - $width_wrapper) /2
 
 // -------------------------------------
 //   Font colors
