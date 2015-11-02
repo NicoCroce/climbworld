@@ -52,7 +52,8 @@
 		width: 30%; background: #E2E0D7; position: absolute; right: $width_wrapper_header; top: 130px; z-index: 3; 
 		@include box-shadow( rgba(0, 0, 0, 0.53) 3px 3px 15px ); 
 		.content-aside {
-			padding: 40px;
+			padding: 40px; 
+			// @include transition (all .2s ease);
 			.title-aside { text-transform: uppercase; text-align: center; font-size: toem(20px); margin-bottom: 40px; }
 		}
 	}

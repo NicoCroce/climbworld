@@ -71,7 +71,7 @@ body { background: #EBEBE8; }
 		background-size: cover; background-repeat: no-repeat; position: relative; @include box-shadow ( black 3px 3px 10px );
 		@include column(1/3, $gutter: 3, $cycle: 3); margin-bottom: 3%; cursor: pointer; overflow: hidden;
 		
-		img{ @include transition(all .3s ease-out); width: 101%; }
+		img{ @include transition(all .3s ease-out); width: 103%; }
 		.hover-element { 
 			width: 100%; height: 100%; background: rgba(253, 202, 46, 0.24); position: absolute; top: 0; 
 			opacity: 0; @include transition(all .3s ease-out);
@@ -108,7 +108,7 @@ body { background: #EBEBE8; }
 	body.products { 
 		.block-right .content-aside {
 			padding: 30px;
-			.title-aside { margin: 0 }
+			.title-aside { margin: 0; font-size: toem(15px);}
 			p { display: none; }
 		}
 	}

@@ -65,19 +65,56 @@ jQuery(document).ready(function($) {
         selectSection(str, false);
     }
 
-    $(document).on('click', '.bt-section', function(){
-    	event.preventDefault();
-        selectSection($(this), true, event);
-    });
+    // $('.bt-section').click(function(e){
+    // 	console.log(e);
+    // });
+	
+	
 
-    function selectSection(elemento, seleccionado, event) {
+//*****************************************************************************************************************************
+
+	
+});
+
+
+
+
+// var $j = jQuery.noConflict();
+
+// $j(function(){    
+//      j(document).on('click', '.bt-section', function(event) {
+//         event.preventDefault();
+//         selectSection($(this), true, e);
+//      });     
+// });
+
+
+// $(document).on('click', '.bt-section', function(e) {
+//     selectSection($(this), true, e);
+//     $('body').scrollTop();
+// });
+
+$('.bt-section').click(function(event){
+	// debugger;
+	// event.preventDefault();
+	// event.stopPropagation();
+	selectSection($(this), true, event);
+	  // $('<div></div>')
+	  //   .append('default ' + event.type + ' prevented')
+	  //   .appendTo('#contentSection');
+	});
+// });
+
+    function selectSection(elemento, seleccionado, e) {
     	$('.bt-section').removeClass('active');
-        // var subTitle = "";
+    	var yScroll= document.body.scrollTop;
         if (seleccionado) {
             // subTitle = elemento.attr('subtitle');
             sectionName = elemento.attr('id');
             window.location.hash = elemento.attr('id');
             elemento.addClass('active');
+            e.preventDefault();
+        	e.stopPropagation();
         } else {
             // subTitle = $('#' + elemento).attr('subtitle');
             sectionName = elemento;
@@ -85,12 +122,35 @@ jQuery(document).ready(function($) {
             $("#"+elemento).addClass('active');
         }
         $('body').removeClass().addClass(sectionName);
+        
         $('#contentSection').load(sectionName + '.html');
+     //    $('<div></div>')
+	    // .append('default ' + e.type + ' prevented')
+	    // .appendTo('#contentSection');
+	    
+		document.body.scrollTop = yScroll;
+        changeTitleAside(sectionName); 
     }
 
-//*****************************************************************************************************************************
 
-	
-});
+var changeTitleAside = function(secName){
+	switch(secName){
+		case 'home':
+			$('.title-aside').text("título a definir");
+			break;
+		case 'company':
+			$('.title-aside').text("título a definir");
+			break;
+		case 'products':
+			$('.title-aside').text("Selecciona un producto para ver su detalle");
+			break;
+		case 'contact':
+			$('.title-aside').text("¿CÓMO LLEGO?");
+			break;
+		default:
+			statements_def
+			break;
+	}
+}
 
 //**********************************************************************************************
