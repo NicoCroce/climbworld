@@ -48,7 +48,13 @@
 			}
 		}
 	}
-	.block-right { width: 30%; height: 300px; background: #E2E0D7; position: absolute; right: $width_wrapper_header; top: 130px; z-index: 3; }
+	.block-right { 
+		width: 30%; height: 300px; background: #E2E0D7; position: absolute; right: $width_wrapper_header; top: 130px; z-index: 3; 
+		.content-aside {
+			padding: 40px;
+			.title-aside { text-transform: uppercase; text-align: center; font-size: 30px; margin-bottom: 40px; }
+		}
+	}
 	.triangulo-bottom-right { width: 0; height: 0; border-bottom: 20px solid #B1AFA5; border-left: 10px solid transparent; position: absolute; right: 100%; }
 	.line-div { background: url(../img/line.png); height: 10px; width: 100%; position: absolute; bottom: -10px; }
 }
