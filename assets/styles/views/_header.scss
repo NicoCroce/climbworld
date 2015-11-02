@@ -49,10 +49,11 @@
 		}
 	}
 	.block-right { 
-		width: 30%; height: 300px; background: #E2E0D7; position: absolute; right: $width_wrapper_header; top: 130px; z-index: 3; 
+		width: 30%; background: #E2E0D7; position: absolute; right: $width_wrapper_header; top: 130px; z-index: 3; 
+		@include box-shadow( rgba(0, 0, 0, 0.53) 3px 3px 15px ); 
 		.content-aside {
 			padding: 40px;
-			.title-aside { text-transform: uppercase; text-align: center; font-size: 30px; margin-bottom: 40px; }
+			.title-aside { text-transform: uppercase; text-align: center; font-size: toem(20px); margin-bottom: 40px; }
 		}
 	}
 	.triangulo-bottom-right { width: 0; height: 0; border-bottom: 20px solid #B1AFA5; border-left: 10px solid transparent; position: absolute; right: 100%; }

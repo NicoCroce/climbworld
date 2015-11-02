@@ -75,17 +75,17 @@ jQuery(document).ready(function($) {
         // var subTitle = "";
         if (seleccionado) {
             // subTitle = elemento.attr('subtitle');
-            sectionName = elemento.attr('id') + '.html';
+            sectionName = elemento.attr('id');
             window.location.hash = elemento.attr('id');
             elemento.addClass('active');
         } else {
             // subTitle = $('#' + elemento).attr('subtitle');
-            sectionName = elemento + '.html';
+            sectionName = elemento;
             window.location.hash = elemento;
             $("#"+elemento).addClass('active');
         }
-
-        $('#contentSection').load(sectionName);
+        $('body').removeClass().addClass(sectionName);
+        $('#contentSection').load(sectionName + '.html');
     }
 
 //*****************************************************************************************************************************
