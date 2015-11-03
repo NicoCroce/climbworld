@@ -27,7 +27,7 @@ body { background: #EBEBE8; }
 .main-section--home {
 	width: $width_wrapper; margin: 0 auto;
 	.content-carousel {
-		position: relative; height: 300px; width: 620px; margin-top: $width_wrapper_header;
+		position: relative; margin-top: toem(108px); width: 620px; margin-top: $width_wrapper_header;
 		.carousel {
 			background: #797979; overflow: hidden;
 			.mask {
@@ -114,3 +114,17 @@ body { background: #EBEBE8; }
 	}
 
 //************************************************************************************
+
+
+
+//*****************************************************************************************************************************
+//											header
+//*****************************************************************************************************************************
+
+	   //  width: 100%;
+    // top: 0;
+    // position: fixed;
+    // background: rgba(0, 0, 0, 0.71);
+    // z-index: 999;	
+
+//*****************************************************************************************************************************

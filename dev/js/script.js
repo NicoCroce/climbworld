@@ -8,8 +8,10 @@
 jQuery(document).ready(function($) {
 	// $('#headerSection').load('header.html');
 	$('#footerSection').load('footer.html');
-	$('#contentSection').load('home.html');
-
+	$('#homeSection').load('home.html');
+	$('#companySection').load('company.html');
+	$('#productsSection').load('products.html');
+	$('#contactSection').load('contact.html');
 	$(document).on('click', '.next', function(){
 		$('#mask').removeClass().addClass('mask');
 		switch(imgIndex){
