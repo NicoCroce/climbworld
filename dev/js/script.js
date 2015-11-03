@@ -76,32 +76,8 @@ jQuery(document).ready(function($) {
 	
 });
 
-
-
-
-// var $j = jQuery.noConflict();
-
-// $j(function(){    
-//      j(document).on('click', '.bt-section', function(event) {
-//         event.preventDefault();
-//         selectSection($(this), true, e);
-//      });     
-// });
-
-
-// $(document).on('click', '.bt-section', function(e) {
-//     selectSection($(this), true, e);
-//     $('body').scrollTop();
-// });
-
 $('.bt-section').click(function(event){
-	// debugger;
-	// event.preventDefault();
-	// event.stopPropagation();
 	selectSection($(this), true, event);
-	  // $('<div></div>')
-	  //   .append('default ' + event.type + ' prevented')
-	  //   .appendTo('#contentSection');
 	});
 // });
 
