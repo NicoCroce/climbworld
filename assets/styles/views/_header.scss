@@ -22,7 +22,7 @@
 	.nav-bar { 
 		list-style-type:none; position: absolute; bottom: 0; text-transform: uppercase;
 		li { 
-			float:left; margin-left:30px; 
+			float:left; margin-left:30px;
 			a {
 				display:block; color:#EAEAEA; padding: 15px 20px; position:relative; box-shadow: 0px -10px 7px -7px rgba(253, 202, 46, 0) inset;
 			    @include transition(all .3s ease-in .1s);
@@ -47,6 +47,18 @@
 				} 
 			}
 		}
+		&.stack-nav-bar {
+			li {
+				@include opacity(0);
+				@for $i from 1 through 4 {
+					$delay: (0.4+($i*0.1));
+					&:nth-child(#{$i}){ @include animation(fadeIn .1s linear #{$delay}s forwards);}
+				}
+				// @include animation(fadeIn .3s linear #{$delay}s forwards); 
+			}
+			// @include transition(all	 .3 ease-in);
+			@include animation(stackBar .4s linear);
+			position: fixed; top: 0; background: rgba(0,0,0,0.8); width: 100%; height: 54px; z-index: 9; }
 	}
 	.block-right { 
 		width: 30%; background: #E2E0D7; position: absolute; right: $width_wrapper_header; top: 130px; z-index: 3; 

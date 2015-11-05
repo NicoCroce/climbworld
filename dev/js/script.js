@@ -10,6 +10,14 @@
 		products: '',
 		contact: ''
 	}
+
+	var positions = {
+		navBar: '',
+		home:'',
+		company: '',
+		products: '',
+		contact: ''
+	}
 //**********************************************************************************************
 
 //******************************************    onLoad    ******************************************
@@ -87,8 +95,13 @@ jQuery(document).ready(function($) {
 		height.header = $('#headerSection').height();
 		height.navBar = $('.nav-bar').height();
 		height.home = $('#homeSection').height();
-
-	}), 1000;
+		height.company = $('#companySection').height();
+		height.products = $('#productsSection').height();
+		height.contact = $('#contactSection').height();
+		positions.navBar = height.header - height.navBar;
+		
+		console.log(height);
+	}, 1000);
 	
 });
 
@@ -151,7 +164,20 @@ var changeTitleAside = function(secName){
 
 $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
-    console.log(scroll);
+    if(scroll >= height.navBar){
+    	console.log("entroooooo  ");
+    	$('.nav-bar').addClass('stack-nav-bar');
+    }else {
+    	$('.nav-bar').removeClass('stack-nav-bar');
+    }
+    console.log("alto  "+ height.header);
 });
+
+// function scrollToAnchor(sectionToScroll){
+//     var aTag = $("a[name='"+ sectionToScroll +"']");
+//     $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+// }
+
+// scrollToAnchor('id3');
 
 //************************************************************************************

@@ -15,3 +15,28 @@
 //   Base
 // -------------------------------------
 
+@include keyframes(stackBar) {
+    0% {
+      height: 0;
+      @include opacity(0);
+    }
+    60% {
+    	height: 70px;
+    }
+    80% {
+      height: 50;
+      @include opacity(1);
+    }
+    100% {
+    	height: 60px;
+    }
+  }
+
+  @include keyframes(fadeIn){
+  	0% {
+  		@include opacity(0);
+  	}
+  	100% {
+  		@include opacity(1);
+  	}
+  }
