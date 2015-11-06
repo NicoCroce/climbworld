@@ -50,7 +50,11 @@
     "grunt-webfont": "^0.5.1",
     "load-grunt-tasks": "~3.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-contrib-compass": "^1.0.4",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-sass": "^1.1.0"
+  },
   "main": "pdr",
   "engines": {
     "node": ">=0.10.0",

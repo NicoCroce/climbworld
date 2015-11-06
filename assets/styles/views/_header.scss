@@ -16,7 +16,7 @@
 // -------------------------------------
 
 .header {
- 	background: url(../img/banner.jpg); height: 150px; position: relative;
+ 	background: url(../img/banner.jpg); height: 600px; position: relative;
  	h1 { color: $first_color_Yellow; padding: 20px 0 0 50px; @include opacity(.8); font-family: 'Indie Flower', cursive; }
  	.img-logo { content: url(../img/logo-principal.png); right: 30px; width: 140px; position: absolute; top: 30px; }
 	.nav-bar { 
@@ -35,14 +35,18 @@
 			    &:hover {
 			    	color: $first_color_Yellow; box-shadow: 0px -10px 7px -7px #FDCA2E inset;
 				    &:before {
-					   	width:100%; left:0; color: $first_color_Yellow
+					   	width:100%; left:0; 
+
+					   	color: $first_color_Yellow
 					}
 				}
 
 				&.active {
 			    	color: $first_color_Yellow; font-weight: 600; box-shadow: 0px -10px 7px -7px #FDCA2E inset;
 				    &:before {
-					   	width:100%; left:0; color: $first_color_Yellow
+					   	width:100%; left:0; 
+
+					   	color: $first_color_Yellow
 					}
 				} 
 			}
@@ -52,7 +56,7 @@
 				@include opacity(0);
 				@for $i from 1 through 4 {
 					$delay: (0.4+($i*0.1));
-					&:nth-child(#{$i}){ @include animation(fadeIn .1s linear #{$delay}s forwards);}
+					&:nth-child(#{$i}){ @include animation(fadeIn .3s linear #{$delay}s forwards);}
 				}
 				// @include animation(fadeIn .3s linear #{$delay}s forwards); 
 			}
