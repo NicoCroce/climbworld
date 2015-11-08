@@ -31,7 +31,8 @@ module.exports = function(grunt) {
             // grunt-watch monitors the projects files and execute actions when a file changes
             watch: {
                 options: {
-                    livereload: true
+                    livereload: false,
+                    spawn: false
                 },
 
                 sass: {
@@ -370,11 +371,11 @@ module.exports = function(grunt) {
 
         // Run the project and fire watchers to real-time compilation
         grunt.registerTask('run', [
+            'sass',
             'bowercopy:dev',
             'copy:images',
             'webfont',
-            'concurrent:watch',
-            'sass'
+            'concurrent:watch'            
         ]);
 
         grunt.registerTask('nico', [
