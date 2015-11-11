@@ -3,21 +3,21 @@
 	var imgIndex = 1;
 	var sectionName = "";
 	var height = {
-		header: '',
-		navBar: '',
-		home:'',
-		company: '',
-		products: '',
-		contact: ''
-	}
+			header: '',
+			navBar: '',
+			home:'',
+			company: '',
+			products: '',
+			contact: ''
+	};
 
 	var positions = {
-		navBar: '',
-		home:'',
-		company: '',
-		products: '',
-		contact: ''
-	}
+			navBar: '',
+			home:'',
+			company: '',
+			products: '',
+			contact: ''
+	};
 //**********************************************************************************************
 
 //******************************************    onLoad    ******************************************
@@ -83,6 +83,11 @@ jQuery(document).ready(function($) {
         selectSection(str, false);
     }
 
+    $(document).on('click', '#downToCompany', function(event) {
+		event.preventDefault();
+		/* Act on the event */
+	});
+
     // $('.bt-section').click(function(e){
     // 	console.log(e);
     // });
@@ -102,6 +107,20 @@ jQuery(document).ready(function($) {
 		
 		console.log(height);
 	}, 1000);
+
+
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash;
+	    var $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 900, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
 	
 });
 
@@ -153,7 +172,6 @@ var changeTitleAside = function(secName){
 			$('.title-aside').text("¿CÓMO LLEGO?");
 			break;
 		default:
-			statements_def
 			break;
 	}
 }
