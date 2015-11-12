@@ -371,10 +371,10 @@ module.exports = function(grunt) {
 
         // Run the project and fire watchers to real-time compilation
         grunt.registerTask('run', [
-            'sass',
             'bowercopy:dev',
             'copy:images',
             'webfont',
+            'sass',
             'concurrent:watch'            
         ]);
 

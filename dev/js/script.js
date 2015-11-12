@@ -127,7 +127,6 @@ jQuery(document).ready(function($) {
 $('.bt-section').click(function(event){
 	selectSection($(this), true, event);
 	});
-// });
 
     function selectSection(elemento, seleccionado, e) {
     	$('.bt-section').removeClass('active');
@@ -182,7 +181,7 @@ var changeTitleAside = function(secName){
 
 $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
-    if(scroll >= height.navBar){
+    if(scroll >= positions.navBar){
     	console.log("entroooooo  ");
     	$('.nav-bar').addClass('stack-nav-bar');
     }else {
