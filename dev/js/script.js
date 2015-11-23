@@ -104,8 +104,11 @@ jQuery(document).ready(function($) {
 		height.products = $('#productsSection').height();
 		height.contact = $('#contactSection').height();
 		positions.navBar = height.header - height.navBar;
-		
+		positions.company = height.navBar + height.home;
+		positions.products = positions.company + height.company;
+		positions.contact = positions.products + height.products;
 		console.log(height);
+		console.log(positions);
 	}, 1000);
 
 
@@ -189,6 +192,13 @@ $(window).scroll(function (event) {
     }
     console.log("alto  "+ height.header);
 });
+
+var changeSection = function (section){
+	$('.bt-section').removeClass('active');
+	window.location.hash = elemento.attr('id');
+    elemento.addClass('active');
+
+};
 
 // function scrollToAnchor(sectionToScroll){
 //     var aTag = $("a[name='"+ sectionToScroll +"']");
