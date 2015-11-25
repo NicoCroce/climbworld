@@ -3,12 +3,12 @@
 	var imgIndex = 1;
 	var sectionName = "";
 	var height = {
-			header: '',
-			navBar: '',
-			home:'',
-			company: '',
-			products: '',
-			contact: ''
+		header: '',
+		navBar: '',
+		home:'',
+		company: '',
+		products: '',
+		contact: ''
 	};
 
 	var positions = {
@@ -18,6 +18,8 @@
 			products: '',
 			contact: ''
 	};
+
+	var offset;
 //**********************************************************************************************
 
 //******************************************    onLoad    ******************************************
@@ -97,16 +99,19 @@ jQuery(document).ready(function($) {
 //*****************************************************************************************************************************
 
 	setTimeout(function(){
-		height.header = $('#headerSection').height();
-		height.navBar = $('.nav-bar').height();
-		height.home = $('#homeSection').height();
-		height.company = $('#companySection').height();
-		height.products = $('#productsSection').height();
-		height.contact = $('#contactSection').height();
+		height.header = $('#headerSection').outerHeight(true);
+		height.navBar = $('.nav-bar').outerHeight(true);
+		height.home = $('#homeSection').outerHeight(true);
+		offset = height.home -  $('#homeSection').height();
+		height.company = $('#companySection').outerHeight(true);
+		height.products = $('#productsSection').outerHeight(true);
+		height.contact = $('#contactSection').outerHeight(true);
 		positions.navBar = height.header - height.navBar;
+		positions.home =  0;
 		positions.company = height.navBar + height.home;
-		positions.products = positions.company + height.company;
-		positions.contact = positions.products + height.products;
+		positions.products = positions.company + height.company - offset;
+		positions.contact = positions.products + height.products - offset;
+		$('#homeSection').height($(window).height() - height.header - offset);
 		console.log(height);
 		console.log(positions);
 	}, 1000);
@@ -185,19 +190,25 @@ var changeTitleAside = function(secName){
 $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
     if(scroll >= positions.navBar){
-    	console.log("entroooooo  ");
     	$('.nav-bar').addClass('stack-nav-bar');
     }else {
     	$('.nav-bar').removeClass('stack-nav-bar');
     }
-    console.log("alto  "+ height.header);
+    if (scroll < positions.company) {
+    	changeSection('home');
+    }else if(scroll < positions.products){
+    	changeSection('company');
+    }else if(scroll < positions.contact){
+    	changeSection('products');
+    }else{
+    	changeSection('contact');
+    }
 });
 
 var changeSection = function (section){
 	$('.bt-section').removeClass('active');
-	window.location.hash = elemento.attr('id');
-    elemento.addClass('active');
-
+	window.location.hash = section;
+    $('#'+section).addClass('active');
 };
 
 // function scrollToAnchor(sectionToScroll){
