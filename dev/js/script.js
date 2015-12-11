@@ -20,6 +20,10 @@
 	};
 
 	var offset;
+	if (window.location.hash !== "") {
+        var strHash = window.location.hash;
+        strHash = strHash.replace("#", "");
+    }
 //**********************************************************************************************
 
 //******************************************    onLoad    ******************************************
@@ -79,12 +83,6 @@ jQuery(document).ready(function($) {
 //											SECCIONES
 //*****************************************************************************************************************************
 
-	if (window.location.hash !== "") {
-        var str = window.location.hash;
-        str = str.replace("#", "");
-        selectSection(str, false);
-    }
-
     $(document).on('click', '#downToCompany', function(event) {
 		event.preventDefault();
 		/* Act on the event */
@@ -108,13 +106,15 @@ jQuery(document).ready(function($) {
 		height.contact = $('#contactSection').outerHeight(true);
 		positions.navBar = height.header - height.navBar;
 		positions.home =  0;
-		positions.company = height.navBar + height.home;
+		positions.company = height.navBar + height.home - offset*3;
 		positions.products = positions.company + height.company - offset;
-		positions.contact = positions.products + height.products - offset;
+		positions.contact = positions.products + height.products;
 		$('#homeSection').height($(window).height() - height.header - offset);
+	    selectSection(strHash, 'hash');
 		console.log(height);
 		console.log(positions);
-	}, 1000);
+		console.log('offfset' + offset);
+	}, 500);
 
 
 	$('a[href^="#"]').on('click',function (e) {
@@ -122,66 +122,39 @@ jQuery(document).ready(function($) {
 
 	    var target = this.hash;
 	    var $target = $(target);
-
 	    $('html, body').stop().animate({
 	        'scrollTop': $target.offset().top
 	    }, 900, 'swing', function () {
-	        window.location.hash = target;
+	        window.location.hash = target.replace('Section', '');
 	    });
 	});
 	
 });
 
 $('.bt-section').click(function(event){
-	selectSection($(this), true, event);
-	});
+	selectSection($(this), 'click', event);
+});
 
     function selectSection(elemento, seleccionado, e) {
     	$('.bt-section').removeClass('active');
     	var yScroll= document.body.scrollTop;
-        if (seleccionado) {
-            // subTitle = elemento.attr('subtitle');
+        if (seleccionado == 'click') {
             sectionName = elemento.attr('id');
             window.location.hash = elemento.attr('id');
             elemento.addClass('active');
             e.preventDefault();
         	e.stopPropagation();
         } else {
-            // subTitle = $('#' + elemento).attr('subtitle');
             sectionName = elemento;
             window.location.hash = elemento;
             $("#"+elemento).addClass('active');
-        }
+            var sectionId = elemento + 'Section';
+            scrollToAnchor(sectionId);
+    	}
+    	window.location.hash = sectionName;
         $('body').removeClass().addClass(sectionName);
-        
-        $('#contentSection').load(sectionName + '.html');
-     //    $('<div></div>')
-	    // .append('default ' + e.type + ' prevented')
-	    // .appendTo('#contentSection');
-	    
-		document.body.scrollTop = yScroll;
-        changeTitleAside(sectionName); 
+ 
     }
-
-
-var changeTitleAside = function(secName){
-	switch(secName){
-		case 'home':
-			$('.title-aside').text("título a definir");
-			break;
-		case 'company':
-			$('.title-aside').text("título a definir");
-			break;
-		case 'products':
-			$('.title-aside').text("Selecciona un producto para ver su detalle");
-			break;
-		case 'contact':
-			$('.title-aside').text("¿CÓMO LLEGO?");
-			break;
-		default:
-			break;
-	}
-}
 
 //**********************************************************************************************
 
@@ -211,11 +184,8 @@ var changeSection = function (section){
     $('#'+section).addClass('active');
 };
 
-// function scrollToAnchor(sectionToScroll){
-//     var aTag = $("a[name='"+ sectionToScroll +"']");
-//     $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-// }
-
-// scrollToAnchor('id3');
-
+function scrollToAnchor(sectionToScroll){
+    var aTag = $("#" + sectionToScroll + "");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+}
 //************************************************************************************
