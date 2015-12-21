@@ -20,3 +20,8 @@ $mediaquery_phones-small--portrait: 	480px;
 //   Base
 // -------------------------------------
 
+@media screen and (max-width: 1024px) {
+    .wrapper { width: 90% }
+
+    #homeSection .content-carousel { margin: 0 auto; }
+}
