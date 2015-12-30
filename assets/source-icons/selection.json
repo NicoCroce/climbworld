@@ -15,15 +15,15 @@
 			},
 			"attrs": [],
 			"properties": {
-				"id": 33,
+				"id": 0,
 				"order": 4,
 				"prevSize": 20,
 				"code": 59648,
 				"name": "chevron-down"
 			},
 			"setIdx": 0,
-			"setId": 4,
-			"iconIdx": 33
+			"setId": 2,
+			"iconIdx": 0
 		},
 		{
 			"icon": {
@@ -39,15 +39,15 @@
 			},
 			"attrs": [],
 			"properties": {
-				"id": 34,
+				"id": 1,
 				"order": 3,
 				"prevSize": 20,
 				"code": 59649,
 				"name": "chevron-left"
 			},
 			"setIdx": 0,
-			"setId": 4,
-			"iconIdx": 34
+			"setId": 2,
+			"iconIdx": 1
 		},
 		{
 			"icon": {
@@ -63,15 +63,15 @@
 			},
 			"attrs": [],
 			"properties": {
-				"id": 35,
+				"id": 2,
 				"order": 2,
 				"prevSize": 20,
 				"code": 59650,
 				"name": "chevron-right"
 			},
 			"setIdx": 0,
-			"setId": 4,
-			"iconIdx": 35
+			"setId": 2,
+			"iconIdx": 2
 		},
 		{
 			"icon": {
@@ -87,15 +87,15 @@
 			},
 			"attrs": [],
 			"properties": {
-				"id": 36,
+				"id": 3,
 				"order": 8,
 				"prevSize": 20,
 				"code": 59651,
 				"name": "chevron-small-down"
 			},
 			"setIdx": 0,
-			"setId": 4,
-			"iconIdx": 36
+			"setId": 2,
+			"iconIdx": 3
 		},
 		{
 			"icon": {
@@ -111,15 +111,15 @@
 			},
 			"attrs": [],
 			"properties": {
-				"id": 37,
+				"id": 4,
 				"order": 9,
 				"prevSize": 20,
 				"code": 59652,
 				"name": "chevron-small-left"
 			},
 			"setIdx": 0,
-			"setId": 4,
-			"iconIdx": 37
+			"setId": 2,
+			"iconIdx": 4
 		},
 		{
 			"icon": {
@@ -135,15 +135,15 @@
 			},
 			"attrs": [],
 			"properties": {
-				"id": 38,
+				"id": 5,
 				"order": 10,
 				"prevSize": 20,
 				"code": 59653,
 				"name": "chevron-small-right"
 			},
 			"setIdx": 0,
-			"setId": 4,
-			"iconIdx": 38
+			"setId": 2,
+			"iconIdx": 5
 		},
 		{
 			"icon": {
@@ -159,15 +159,15 @@
 			},
 			"attrs": [],
 			"properties": {
-				"id": 45,
+				"id": 6,
 				"order": 5,
 				"prevSize": 20,
 				"code": 59654,
 				"name": "chevron-with-circle-down"
 			},
 			"setIdx": 0,
-			"setId": 4,
-			"iconIdx": 45
+			"setId": 2,
+			"iconIdx": 6
 		},
 		{
 			"icon": {
@@ -183,15 +183,15 @@
 			},
 			"attrs": [],
 			"properties": {
-				"id": 46,
+				"id": 7,
 				"order": 6,
 				"prevSize": 20,
 				"code": 59655,
 				"name": "chevron-with-circle-left"
 			},
 			"setIdx": 0,
-			"setId": 4,
-			"iconIdx": 46
+			"setId": 2,
+			"iconIdx": 7
 		},
 		{
 			"icon": {
@@ -207,20 +207,20 @@
 			},
 			"attrs": [],
 			"properties": {
-				"id": 47,
+				"id": 8,
 				"order": 7,
 				"prevSize": 20,
 				"code": 59656,
 				"name": "chevron-with-circle-right"
 			},
 			"setIdx": 0,
-			"setId": 4,
-			"iconIdx": 47
+			"setId": 2,
+			"iconIdx": 8
 		}
 	],
 	"height": 1024,
 	"metadata": {
-		"name": "icomoon"
+		"name": "styleIcons"
 	},
 	"preferences": {
 		"showGlyphs": true,
@@ -230,7 +230,7 @@
 		"fontPref": {
 			"prefix": "icon-",
 			"metadata": {
-				"fontFamily": "icomoon",
+				"fontFamily": "styleIcons",
 				"majorVersion": 1,
 				"minorVersion": 0
 			},
