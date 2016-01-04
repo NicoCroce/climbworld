@@ -44,7 +44,7 @@ main { height: 100%; }
 		.carousel {
 			background: #797979; overflow: hidden;
 			.mask {
-				width: calc(100%); height: 300px;
+				width: calc(100%); height: 300px; overflow: hidden; position: relative;
 				// &.img0-selected {
 				// 	div { @include translate3d(0, 0, 0); }
 				// }
@@ -77,11 +77,11 @@ main { height: 100%; }
 }
 
 .fade-in-grow {
-	@include animation(fadeInGrow 1s ease);
+	@include animation(fadeInGrow 1s ease forwards);
 }
 
 .fade-out-grow {
-	@include animation(fadeOutGrow 1s ease);
+	@include animation(fadeOutGrow 1s ease forwards);
 }
 
 .block-right { 

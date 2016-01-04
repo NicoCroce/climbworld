@@ -40,61 +40,29 @@ jQuery(document).ready(function($) {
 	$('#productsSection').load('products.html');
 	$('#contactSection').load('contact.html');
 	$(document).on('click', '.next', function(){
-		// if (imgIndex == totalImg) { 
-		// 	imgIndex = 1;
-		// 	$('.img'+totalImg).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-out-grow');
-		// 	$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-in-grow');
-		// 	return;
-		// };
-		// imgIndex++;
+		if (imgIndex == totalImg) {
+			$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-out-grow');
+			imgIndex = 1;
+			$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-in-grow');
+			return;
+		};
 		$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-out-grow');
 		imgIndex++;
 		$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-in-grow');
-		if (imgIndex == totalImg) { 
-			imgIndex = 1;
-			$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-in-grow');
-		};
-		// $('#mask').removeClass().addClass('mask');
-		// switch(imgIndex){
-		// 	case 0:
-		// 		$('#mask').addClass('img0-selected');
-		// 		imgIndex = 1;
-		// 		break;
-		// 	case 1:
-		// 		$('#mask').addClass('img1-selected');
-		// 		imgIndex = 2
-		// 		break;
-		// 	case 2:
-		// 		$('#mask').addClass('img2-selected');
-		// 		imgIndex = 0;
-		// 		break;
-		// 	default:
-		// 		statements_def
-		// 		break;
-		// }
 	});
 
 	$(document).on('click', '.prev', function(){
-		$('#mask').removeClass().addClass('mask');
-		switch(imgIndex){
-			case 0:
-				$('#mask').addClass('img0-selected');
-				imgIndex = 2;
-				break;
-			case 1:
-				$('#mask').addClass('img1-selected');
-				imgIndex = 0;
-				break;
-			case 2:
-				$('#mask').addClass('img2-selected');
-				imgIndex = 1;
-				break;
-			default:
-				statements_def
-				break;
-		}
-		
+		if (imgIndex == 1) {
+			$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-out-grow');
+			imgIndex = totalImg;
+			$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-in-grow');
+			return;
+		};
+		$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-out-grow');
+		imgIndex--;
+		$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-in-grow');
 	});
+
 
 
 //*****************************************************************************************************************************
