@@ -55,11 +55,11 @@ main { height: 100%; }
 				// 	div { @include translate3d(-200%, 0, 0); }
 				// }
 				div {
-					width: 620px; height: 300px; position: absolute; background-size: cover; @include transition (all, .4s ease-in); 
+					width: 620px; height: 100%; position: absolute; background-size: cover; @include transition (all, .4s ease-in); 
 					margin-right: -7px;
-					&.img1 { background: url(../img/img-11.jpg); background-size: cover; background-repeat: no-repeat;}
-					&.img2 { background: url(../img/img-22.jpg); background-size: cover; background-repeat: no-repeat;}
-					&.img3 { background: url(../img/img-33.jpg); background-size: cover; background-repeat: no-repeat;}
+					&.img1 { background: url(../img/img-11.jpg); background-size: cover; background-repeat: no-repeat; width: 100%;}
+					&.img2 { background: url(../img/img-22.jpg); background-size: cover; background-repeat: no-repeat; width: 100%;}
+					&.img3 { background: url(../img/img-33.jpg); background-size: cover; background-repeat: no-repeat; width: 100%;}
 				}
 			}
 		}

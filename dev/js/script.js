@@ -9,7 +9,8 @@
 		home:'',
 		company: '',
 		products: '',
-		contact: ''
+		contact: '',
+		imgCarousel: ''
 	};
 
 	var positions = {
@@ -96,6 +97,11 @@ jQuery(document).ready(function($) {
 		console.log(positions);
 		console.log(offset);
 	}, 500);
+
+	// setTimeout(function(){
+	// 	height.imgCarousel = $('.img1').height();
+	// 	$('#mask').height(height.imgCarousel);
+	// }, 1100);
 
 
 	$('a[href^="#"]').on('click',function (e) {
