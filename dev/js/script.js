@@ -10,7 +10,9 @@
 		company: '',
 		products: '',
 		contact: '',
-		imgCarousel: ''
+		imgCarousel: '',
+		homeHuge: '',
+		homeNormal: ''
 	};
 
 	var positions = {
@@ -91,7 +93,14 @@ jQuery(document).ready(function($) {
 		positions.company = height.navBar + height.home - offset*2;
 		positions.products = positions.company + height.company - offset;
 		positions.contact = positions.products + height.products;
-		$('#homeSection').height($(window).height() - height.header);
+		height.homeHuge = $('#blockRightMobile').outerHeight(true) + $('.content-carousel').height() + $('#goToCompany').height() + 5;
+		height.homeNormal = $(window).height();
+		if (height.homeHuge > height.homeNormal) {
+			$('#homeSection').height(height = height.homeHuge);
+		}else{
+			$('#homeSection').height(height.homeNormal);
+		}
+		// $('#homeSection').height($(window).height() - height.header);
 	    selectSection(strHash, 'hash');
 		console.log(height);
 		console.log(positions);
