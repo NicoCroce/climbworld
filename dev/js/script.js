@@ -94,11 +94,13 @@ jQuery(document).ready(function($) {
 		positions.products = positions.company + height.company - offset;
 		positions.contact = positions.products + height.products;
 		height.homeHuge = $('#blockRightMobile').outerHeight(true) + $('.content-carousel').height() + $('#goToCompany').height() + 5;
-		height.homeNormal = $(window).height();
+		height.homeNormal = $(window).height() - height.header;
 		if (height.homeHuge > height.homeNormal) {
-			$('#homeSection').height(height = height.homeHuge);
+			$('#homeSection').height(height.homeHuge);
+			$('#main').height(height.homeHuge);
 		}else{
 			$('#homeSection').height(height.homeNormal);
+			$('#main').height(height.homeNormal);
 		}
 		// $('#homeSection').height($(window).height() - height.header);
 	    selectSection(strHash, 'hash');
