@@ -15,6 +15,7 @@
 //   Nav
 // -------------------------------------
 
+header {position: relative; z-index: 9000; }
 .header {
  	background: url(../img/banner.jpg); height: 150px; position: relative;
  	h1 { color: $first_color_Yellow; padding: 20px 0 0 50px; @include opacity(.8); font-family: 'Indie Flower', cursive; }
