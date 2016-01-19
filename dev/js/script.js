@@ -16,11 +16,11 @@
 	};
 
 	var positions = {
-			navBar: '',
-			home:'',
-			company: '',
-			products: '',
-			contact: ''
+		navBar: '',
+		home:'',
+		company: '',
+		products: '',
+		contact: ''
 	};
 
 	var offset;
@@ -30,7 +30,6 @@
     }
 
    	var isReady = false;
-
     var closedMenu = true;
     var startedAnim = false;
     var beforeScroll = 0;
@@ -74,11 +73,11 @@ jQuery(document).ready(function($) {
 //											SECCIONES
 //*****************************************************************************************************************************
 
-			    $(document).on('click', '#goToCompany', function(event) {
-					event.preventDefault();
-					scrollToAnchor('companySection');
-				});	
-	
+ //    $(document).on('click', '#goToCompany', function(event) {
+	// 	event.preventDefault();
+	// 	scrollToAnchor('companySection');
+	// });	
+
 
 //*****************************************************************************************************************************
 
@@ -90,33 +89,27 @@ jQuery(document).ready(function($) {
 		height.company = $('#companySection').outerHeight(true);
 		height.products = $('#productsSection').outerHeight(true);
 		height.contact = $('#contactSection').outerHeight(true);
-		positions.navBar = height.header - height.navBar;
-		positions.home =  0;
-		positions.company = height.navBar + height.home - offset*2;
-		positions.products = positions.company + height.company - offset;
-		positions.contact = positions.products + height.products;
 		height.homeHuge = $('#blockRightMobile').outerHeight(true) + $('.content-carousel').height() + $('#goToCompany').height() + height.header + 5;
 		height.homeNormal = $(window).height();
 		if (height.homeHuge > height.homeNormal) {
 			$('#homeSection').height(height.homeHuge);
 			// $('#main').height(height.homeHuge);
 		}
+		positions.home =  0;
+		positions.company = $('#companySection').position().top;
+		positions.products = $('#productsSection').position().top;
+		positions.contact = $('#contactSection').position().top;
+		positions.navBar = $('.nav-bar').position().top;
 		isReady = true;
 		// if (strHash != undefined && strHash != "home") {
   //   		selectSection(strHash, 'hash');
   //   	};		
 		// $('#homeSection').height($(window).height() - height.header);
 	    
-		console.log(height);
-		console.log(positions);
-		console.log(offset);
+		// console.log(height);
+		// console.log(positions);
+		// console.log(offset);
 	}, 1000);
-
-	// setTimeout(function(){
-	// 	height.imgCarousel = $('.img1').height();
-	// 	$('#mask').height(height.imgCarousel);
-	// }, 1100);
-
 
 	$('a[href^="#"]').on('click',function (e) {
 	    e.preventDefault();
@@ -130,118 +123,76 @@ jQuery(document).ready(function($) {
 	    });
 	});
 
-	// $('#btMenu').click(function(event) {
-	// 	if ($('#menuMobile').hasClass('hidden')) {
-	// 		$('#menuMobile').removeClass('hidden');
-	// 	}else{
-	// 		$('#menuMobile').addClass('hidden');
-	// 	}
-	// });
-
-				$('#btMenu').click(function(event) {
-			        if (startedAnim) {
-			            return;
-			        }
-			        if (!closedMenu) {
-			            startedAnim = true;
-			            $(this).removeClass('opened');
-			            $('#menuMobile').addClass('hidden');
-			            $('body').removeClass('menu-opened');
-			            setTimeout(function() {
-			                startedAnim = false;
-			                closedMenu = true;
-			            }, 500);
-			        } else {
-			            startedAnim = true;
-			            $(this).addClass('opened');
-			            $('#menuMobile').removeClass('hidden');
-			            $('body').addClass('menu-opened');
-			            closedMenu = false;
-			            setTimeout(function() {
-			                startedAnim = false;
-			            }, 2000);
-			        }
-			    });
-
-			    $(window).scroll(function (event) {
-					
-			    	if (!isReady) { return; };
-
-				    var scroll = $(window).scrollTop();
-
-				    if ( window.location.hash == undefined || window.location.hash == "" || scroll < 10 ) { return; };
-
-				    if (scroll > beforeScroll) {
-				    	$('.bg-header-mobile').addClass('hidden');
-				    }else{
-				    	$('.bg-header-mobile').removeClass('hidden');
-				    }
-
-				    beforeScroll = scroll;
-				    if(scroll >= positions.navBar){
-				    	$('.nav-bar').addClass('stack-nav-bar');
-				    }else {
-				    	$('.nav-bar').removeClass('stack-nav-bar');
-				    }
-				    if (scroll >= height.header) {
-				    	$('.bg-header-mobile').removeClass('hidden-bg');
-				    }else{
-				    	$('.bg-header-mobile').addClass('hidden-bg');
-				    }
-				    if (scroll < positions.company) {
-				    	changeSection('home');
-				    }else if(scroll < positions.products){
-				    	changeSection('company');
-				    }else if(scroll < positions.contact){
-				    	changeSection('products');
-				    }else{
-				    	changeSection('contact');
-				    }
-				});
+	$('#btMenu').click(function(event) {
+        if (startedAnim) {
+            return;
+        }
+        if (!closedMenu) {
+            startedAnim = true;
+            $(this).removeClass('opened');
+            $('#menuMobile').addClass('hidden');
+            $('body').removeClass('menu-opened');
+            setTimeout(function() {
+                startedAnim = false;
+                closedMenu = true;
+            }, 500);
+        } else {
+            startedAnim = true;
+            $(this).addClass('opened');
+            $('#menuMobile').removeClass('hidden');
+            $('body').addClass('menu-opened');
+            closedMenu = false;
+            setTimeout(function() {
+                startedAnim = false;
+            }, 2000);
+        }
+    });
 });
 
-			$('.bt-section').click(function(event){
-				selectSection($(this), 'click', event);
-				$('#menuMobile').addClass('hidden');
-			    $('body').removeClass('menu-opened');
-			    $('#btMenu').removeClass('opened');
-			    closedMenu = true;
-			});
+// **********************    END READY    ******************************
 
-			function selectSection(elemento, seleccionado, e) {
-				$('.bt-section').removeClass('active');
-			    if (seleccionado == 'click') {
-			        sectionName = elemento.attr('id').replace('Mobile', '');
-			        window.location.hash = elemento.attr('id').replace('Mobile', '');
-			        elemento.addClass('active');
-			        e.preventDefault();
-			    	e.stopPropagation();
-			    } else {
-			        sectionName = elemento;
-			        window.location.hash = elemento;
-			        $("#"+elemento).addClass('active');
-			        $("#"+elemento+'Mobile').addClass('active');
-			        var sectionId = elemento + 'Section';
-			        scrollToAnchor(sectionId);
-				}
-				window.location.hash = sectionName;
-			    $('body').removeClass().addClass(sectionName);
+$('.bt-section').click(function(event){
+	selectSection($(this), 'click', event);
+	$('#menuMobile').addClass('hidden');
+    $('body').removeClass('menu-opened');
+    $('#btMenu').removeClass('opened');
+    closedMenu = true;
+});
 
-			}
+function selectSection(elemento, seleccionado, e) {
+	$('.bt-section').removeClass('active');
+    if (seleccionado == 'click') {
+        sectionName = elemento.attr('id').replace('Mobile', '');
+        elemento.addClass('active');
+    } else {
+        sectionName = elemento;
+        window.location.hash = elemento;
+        $("#"+elemento).addClass('active');
+        $("#"+elemento+'Mobile').addClass('active');
+        var sectionId = elemento + 'Section';
+        scrollToAnchor(sectionId);
+	}
+ 	e.preventDefault();
+	e.stopPropagation();
+	window.location.hash = sectionName;
+    $('body').removeClass().addClass(sectionName);
+}
 
 //**********************************************************************************************
 
 //**********************************    SECCIÓN  scroll    *************************************
 
-			var changeSection = function (section){
-				$('.bt-section').removeClass('active');
-				window.location.hash = section;
-			    $('#'+section).addClass('active');
-			    $('#'+section+'Mobile').addClass('active');
-			};
+// var changeSection = function (section, event){
+// 	$('.bt-section').removeClass('active');
+//     $('#'+section).addClass('active');
+//     $('#'+section+'Mobile').addClass('active');
+//     event.preventDefault();
+//     window.location.hash = section;
+// };
 
-			function scrollToAnchor(sectionToScroll){
-			    var aTag = $("#" + sectionToScroll + "");
-			    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-			}
+function scrollToAnchor(sectionToScroll){
+    var aTag = $("#" + sectionToScroll + "");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+}
+			
 //************************************************************************************
