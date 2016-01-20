@@ -23,7 +23,7 @@
 }
 
 .nav-bar { 
-	list-style-type:none; margin-top: 41px; text-transform: uppercase;
+	list-style-type:none; position: absolute; top: 96px; z-index: 1000; text-transform: uppercase;
 	
 	li { 
 		display: inline-block;

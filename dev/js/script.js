@@ -99,7 +99,7 @@ jQuery(document).ready(function($) {
 		positions.company = $('#companySection').position().top;
 		positions.products = $('#productsSection').position().top;
 		positions.contact = $('#contactSection').position().top;
-		positions.navBar = $('.nav-bar').position().top;
+		positions.navBar = height.header - height.navBar;
 		isReady = true;
 		// if (strHash != undefined && strHash != "home") {
   //   		selectSection(strHash, 'hash');
@@ -119,7 +119,7 @@ jQuery(document).ready(function($) {
 	    $('html, body').stop().animate({
 	        'scrollTop': $target.offset().top
 	    }, 900, 'swing', function () {
-	        window.location.hash = target.replace('Section', '');
+	        // window.location.hash = target.replace('Section', '');
 	    });
 	});
 
@@ -163,18 +163,18 @@ function selectSection(elemento, seleccionado, e) {
 	$('.bt-section').removeClass('active');
     if (seleccionado == 'click') {
         sectionName = elemento.attr('id').replace('Mobile', '');
-        elemento.addClass('active');
+        // elemento.addClass('active');
+        changeSection(sectionName);
     } else {
         sectionName = elemento;
-        window.location.hash = elemento;
         $("#"+elemento).addClass('active');
         $("#"+elemento+'Mobile').addClass('active');
         var sectionId = elemento + 'Section';
-        scrollToAnchor(sectionId);
+        // scrollToAnchor(sectionId);
 	}
  	e.preventDefault();
 	e.stopPropagation();
-	window.location.hash = sectionName;
+	// window.location.hash = sectionName;
     $('body').removeClass().addClass(sectionName);
 }
 
@@ -182,17 +182,17 @@ function selectSection(elemento, seleccionado, e) {
 
 //**********************************    SECCIÓN  scroll    *************************************
 
-// var changeSection = function (section, event){
-// 	$('.bt-section').removeClass('active');
-//     $('#'+section).addClass('active');
-//     $('#'+section+'Mobile').addClass('active');
-//     event.preventDefault();
-//     window.location.hash = section;
-// };
+var changeSection = function (section, event){
+	$('.bt-section').removeClass('active');
+    $('#'+section).addClass('active');
+    $('#'+section+'Mobile').addClass('active');
+    // event.preventDefault();
+    // window.location.hash = section;
+};
 
-function scrollToAnchor(sectionToScroll){
-    var aTag = $("#" + sectionToScroll + "");
-    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-}
+// function scrollToAnchor(sectionToScroll){
+//     var aTag = $("#" + sectionToScroll + "");
+//     $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+// }
 			
 //************************************************************************************
