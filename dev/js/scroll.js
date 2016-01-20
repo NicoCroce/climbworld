@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 	$(window).scroll(function (event) {
 		console.log('entro');
-    	// if (!isReady) { return; };
+    	if (!isReady) { return; };
 
 	    var scroll = $(window).scrollTop();
 
@@ -32,9 +32,9 @@ $(document).ready(function(){
 	    }
 	    if (scroll < positions.company) {
 	    	changeSection('home');
-	    }else if(scroll < positions.products && scroll >= positions.company - offsetScroll){
+	    }else if(scroll < positions.products){
 	    	changeSection('company');
-	    }else if(scroll < positions.contact && scroll >= positions.products - offsetScroll){
+	    }else if(scroll < positions.contact){
 	    	changeSection('products');
 	    }else{
 	    	changeSection('contact');

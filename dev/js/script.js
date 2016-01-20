@@ -73,10 +73,10 @@ jQuery(document).ready(function($) {
 //											SECCIONES
 //*****************************************************************************************************************************
 
- //    $(document).on('click', '#goToCompany', function(event) {
-	// 	event.preventDefault();
-	// 	scrollToAnchor('companySection');
-	// });	
+    $(document).on('click', '#goToCompany', function(event) {
+		event.preventDefault();
+		scrollToAnchor('companySection');
+	});	
 
 
 //*****************************************************************************************************************************
@@ -89,7 +89,7 @@ jQuery(document).ready(function($) {
 		height.company = $('#companySection').outerHeight(true);
 		height.products = $('#productsSection').outerHeight(true);
 		height.contact = $('#contactSection').outerHeight(true);
-		height.homeHuge = $('#blockRightMobile').outerHeight(true) + $('.content-carousel').height() + $('#goToCompany').height() + height.header + 5;
+		height.homeHuge = $('.main-section--home').outerHeight(true) + height.header + 15;
 		height.homeNormal = $(window).height();
 		if (height.homeHuge > height.homeNormal) {
 			$('#homeSection').height(height.homeHuge);
@@ -183,6 +183,7 @@ function selectSection(elemento, seleccionado, e) {
 //**********************************    SECCIÓN  scroll    *************************************
 
 var changeSection = function (section, event){
+	sectionName = section;
 	$('.bt-section').removeClass('active');
     $('#'+section).addClass('active');
     $('#'+section+'Mobile').addClass('active');
@@ -190,9 +191,9 @@ var changeSection = function (section, event){
     // window.location.hash = section;
 };
 
-// function scrollToAnchor(sectionToScroll){
-//     var aTag = $("#" + sectionToScroll + "");
-//     $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-// }
+function scrollToAnchor(sectionToScroll){
+    var aTag = $("#" + sectionToScroll + "");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+}
 			
 //************************************************************************************
