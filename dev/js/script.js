@@ -3,6 +3,7 @@
 	var imgIndex = 1;
 	var totalImg = 3;
 	var sectionName = "";
+    var isClicked = false;
 	var height = {
 		header: '',
 		navBar: '',
@@ -55,7 +56,7 @@ jQuery(document).ready(function($) {
 		$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-in-grow');
 	});
 
-	$(document).on('click', '.prev', function(){
+	$(document).on('click', '.prev', function (){
 		if (imgIndex == 1) {
 			$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-out-grow');
 			imgIndex = totalImg;
@@ -153,6 +154,7 @@ jQuery(document).ready(function($) {
 
 $('.bt-section').click(function(event){
 	selectSection($(this), 'click', event);
+    changeStateClick();
 	$('#menuMobile').addClass('hidden');
     $('body').removeClass('menu-opened');
     $('#btMenu').removeClass('opened');
@@ -163,12 +165,11 @@ function selectSection(elemento, seleccionado, e) {
 	$('.bt-section').removeClass('active');
     if (seleccionado == 'click') {
         sectionName = elemento.attr('id').replace('Mobile', '');
-        // elemento.addClass('active');
         changeSection(sectionName);
     } else {
         sectionName = elemento;
-        $("#"+elemento).addClass('active');
-        $("#"+elemento+'Mobile').addClass('active');
+        /*$("#"+elemento).addClass('active');
+        $("#"+elemento+'Mobile').addClass('active');*/
         var sectionId = elemento + 'Section';
         // scrollToAnchor(sectionId);
 	}
@@ -182,7 +183,7 @@ function selectSection(elemento, seleccionado, e) {
 
 //**********************************    SECCIÓN  scroll    *************************************
 
-var changeSection = function (section, event){
+var changeSection = function (section){
 	sectionName = section;
 	$('.bt-section').removeClass('active');
     $('#'+section).addClass('active');
@@ -194,6 +195,13 @@ var changeSection = function (section, event){
 function scrollToAnchor(sectionToScroll){
     var aTag = $("#" + sectionToScroll + "");
     $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+}
+
+function changeStateClick(){
+    isClicked = true;
+    setTimeout(function(){
+        isClicked = false;
+    },1000);
 }
 			
 //************************************************************************************
