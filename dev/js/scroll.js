@@ -30,6 +30,9 @@ $(document).ready(function(){
 	    }else{
 	    	$('.bg-header-mobile').addClass('hidden-bg');
 	    }
+        if(isClicked){
+            return;
+        }
 	    if (scroll < positions.company) {
 	    	changeSection('home');
 	    }else if(scroll < positions.products){
