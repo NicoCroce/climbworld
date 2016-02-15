@@ -50,6 +50,8 @@ $mediaquery_phones-small--portrait: 	480px;
 	.list-products .product-element.most-important { @include column(1/2, $gutter: 2, $uncycle: 3, $cycle: 2); }
 }
 
+
+
 @media screen and (max-width: $mediaquery_tablets--portrait) {
 	body { font-size: 14px; }
 	h1.centered-title { 
