@@ -1,0 +1,26 @@
+.modal {
+    position: fixed; background: rgba(0, 0, 0, 0.7); width: 100%; height: 100%;
+    top: 0; z-index: 1001;
+    &:before {
+        content: "";
+        background: rgba(36, 36, 36, 0.4);
+        width: 82%;
+        height: 84%;
+        position: absolute;
+        left: 9%;
+        top: 8%;
+        border-radius: 10px;
+    }
+    >div {
+        background: #eaeaea; height: 80%; width: 80%; margin: 0 auto; top: 10%;
+        position: relative;     border: 2px solid #fdca2e; border-radius: 10px;
+        padding: 5%;
+        .title-modal { text-align: center; font-size: 3em;
+            @include text-shadow(3px 1px 5px rgba(0, 0, 0, 0.46));
+            border-bottom: 1px solid rgba(58, 58, 58, 0.39);     padding-bottom: 3%;
+        }
+        h3 { margin: 2% 0; font-size: 2em; }
+        .detail { margin: 3% 0; }
+    }
+
+}
