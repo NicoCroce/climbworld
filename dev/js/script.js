@@ -205,3 +205,13 @@ function changeStateClick(){
 }
 			
 //************************************************************************************
+
+/*MODAL*/
+
+$(document).on('click', '.product-element', function(){
+    $('#detalleProducto').addClass('opened');
+})
+
+$(document).on('click', '#detalleProducto', function(){
+    $('#detalleProducto').removeClass('opened');
+})

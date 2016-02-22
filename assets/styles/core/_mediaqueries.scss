@@ -64,6 +64,11 @@ $mediaquery_phones-small--portrait: 	480px;
 
 	.arrow-down { line-height: 4; }
 	.main-section--home .block-right { margin: toem(80px) 0; }
+
+    .modal .modal-border .modal-content .modal-block {
+        display: block; width: 100%;
+        img { margin: 0 auto; }
+     }
 }
 
 @media screen and (max-width: $mediaquery_phones) {
