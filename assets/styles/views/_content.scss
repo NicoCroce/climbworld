@@ -31,6 +31,8 @@ h1.centered-title {
 	&.hidden { @include translate3d(0,-100%,0); }
 }
 
+.no-scroll { overflow: hidden !important; }
+
 main { height: 100%; }
 #homeSection { height: 100%; }
 .main-section--home {

@@ -38,6 +38,7 @@
 
 //******************************************    onLoad    ******************************************
 jQuery(document).ready(function($) {
+    window.scrollTo(0,1);
 	// $('#headerSection').load('header.html');
 	$('#footerSection').load('footer.html');
 	$('#homeSection').load('home.html');
@@ -210,8 +211,10 @@ function changeStateClick(){
 
 $(document).on('click', '.product-element', function(){
     $('#detalleProducto').addClass('opened');
+    $('body').addClass('no-scroll');
 })
 
 $(document).on('click', '#detalleProducto', function(){
     $('#detalleProducto').removeClass('opened');
+    $('body').removeClass('no-scroll');
 })
