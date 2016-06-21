@@ -2,17 +2,17 @@
     position: fixed; background: rgba(0, 0, 0, 0.7); width: 100%; height: 100%;
     top: 0; z-index: 1001; opacity: 0; visibility: hidden;
     @extend .perspective;
-    @include transition(opacity .4s ease-out);
+    transition: opacity .4s ease-out;
     .modal-border {
         background: rgba(36, 36, 36, 0.4); width: 82%; height: 84%; position: absolute;
         left: 9%; top: 8%; border-radius: 10px;
-        @include transition(all .3s ease-out);
+        transition: all .3s ease-out;
         .modal-content {
             background: #eaeaea; height: 95%; width: 95%; border: 2px solid #fdca2e; border-radius: 10px; overflow: hidden;
             padding: 5%;
             @include vertical-align;
             .title-modal { text-align: center; font-size: 3em;
-                @include text-shadow(3px 1px 5px rgba(0, 0, 0, 0.46));
+                text-shadow: 3px 1px 5px rgba(0, 0, 0, 0.46);
                 border-bottom: 1px solid rgba(58, 58, 58, 0.39);     padding-bottom: 3%;
             }
             h3 { margin: 2% 0; font-size: 2em; }
@@ -35,5 +35,5 @@
 
 .perspective {
     perspective: 325em; perspective-origin: top;
-    .modal-border { @include transform3d(rotate3d(1,0,0, 10deg) translate3d(0,-5%,0)); }
+    .modal-border { transform: rotate3d(1,0,0, 10deg) translate3d(0,-5%,0); }
 }

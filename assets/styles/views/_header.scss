@@ -16,7 +16,7 @@
 // -------------------------------------
 .header {
  	background: url(../img/banner.jpg); height: 150px; position: relative;
- 	h1 { color: $first_color_Yellow; padding: 20px 0 0 50px; @include opacity(.8); font-family: 'Indie Flower', cursive; }
+ 	h1 { color: $first_color_Yellow; padding: 20px 0 0 50px; opacity: .8; font-family: 'Indie Flower', cursive; }
  	.img-logo { content: url(../img/logo-principal.png); right: toem(30px); width: toem(140px); position: absolute; top: 30px; z-index: 12;}
 	.triangulo-bottom-right { width: 0; height: 0; border-bottom: 20px solid #B1AFA5; border-left: 10px solid transparent; position: absolute; right: 100%; }
 	.line-div { background: url(../img/line.png); height: 10px; width: 100%; position: absolute; bottom: -10px; }
@@ -29,9 +29,9 @@
 		display: inline-block;
 		a {
 			display:block; color:#EAEAEA; padding: 15px 20px; position:relative; box-shadow: 0px -10px 7px -7px rgba(253, 202, 46, 0) inset;
-		    @include transition(all .3s ease-in .1s);
+		    transition: all .3s ease-in .1s;
 		    &:before {
-		    	@include transition(all .3s ease-in);
+		    	transition: all .3s ease-in;
 		    	content:""; display:block; position:absolute; left:50%; bottom:0; 
 			    height:2px; width:0; background: $first_color_Yellow;
 		    }
@@ -53,14 +53,14 @@
 	&.stack-nav-bar {
 		margin: 0;
 		li {
-			@include opacity(0);
+			opacity: 0;
 			@for $i from 1 through 4 {
 				$delay: (0.4+($i*0.1));
-				&:nth-child(#{$i}){ @include animation(fadeIn .3s linear #{$delay}s forwards);}
+				&:nth-child(#{$i}){ animation: fadeIn .3s linear #{$delay}s forwards;}
 			}
-			// @include animation(fadeIn .3s linear #{$delay}s forwards); 
+			// animation: fadeIn .3s linear #{$delay}s forwards; 
 		}
-		// @include transition(all	 .3 ease-in);
-		@include animation(stackBar .4s linear);
+		// transition: all .3 ease-in;
+		animation: stackBar .4s linear;
 		position: fixed; top: 0; background: rgba(0,0,0,0.8); width: 100%; height: 54px; z-index: 9; }
 }

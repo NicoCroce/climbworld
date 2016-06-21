@@ -15,73 +15,73 @@
 //   Base
 // -------------------------------------
 
-@include keyframes(stackBar) {
+keyframes(stackBar) {
     0% {
       height: 0;
-      @include opacity(0);
+      opacity: 0;
     }
     60% {
     	height: 70px;
     }
     80% {
       height: 50;
-      @include opacity(1);
+      opacity: 1;
     }
     100% {
     	height: 60px;
     }
   }
 
-  @include keyframes(fadeIn){
+  keyframes(fadeIn){
   	0% {
-  		@include opacity(0);
+  		opacity: 0;
   	}
   	100% {
-  		@include opacity(1);
+  		opacity: 1;
   	}
   }
 
-  @include keyframes(grow-circle){
+  keyframes(grow-circle){
     0% {
-      @include scale3d(0 0 0);
-      // @include opacity(0);
+      transform: scale3d(0, 0, 0);
+      // opacity: 0;
     }
     100% {
-      @include scale3d(1.03 1.03 1.03)
-      // @include opacity(1);
+      transform: scale3d(1.03, 1.03, 1.03)
+      // opacity: 1;
     }
   }
 
-  @include keyframes(fadeInGrow){
+  keyframes(fadeInGrow){
     0% {
-      @include scale3d(2,2,2);
-      @include opacity(0);
+      transform: scale3d(2,2,2);
+      opacity: 0;
     }
     100% {
-      @include scale3d(1,1,1);
-      @include opacity(1);
+      transform: scale3d(1,1,1);
+      opacity: 1;
     }
   }
 
-  @include keyframes(fadeOutGrow){
+  keyframes(fadeOutGrow){
     0%{
-      @include scale3d(1,1,1);
-      @include opacity(1);
+      transform: scale3d(1,1,1);
+      opacity: 1;
     }
     100%{
-      @include scale3d(2,2,2);
-      @include opacity(0);
+      transform: scale3d(2,2,2);
+      opacity: 0;
     }
   }
 
-  @include keyframes(growRow){
+  keyframes(growRow){
     0% {
-      @include scale3d(1,1,1);
-      @include opacity(0);
+      transform: scale3d(1,1,1);
+      opacity: 0;
     }
-    70% { @include opacity(1); }
+    70% { opacity: 1; }
     100% {
-      @include scale3d(2,2,2);
-      @include opacity(0);
+      transform: scale3d(2,2,2);
+      opacity: 0;
     }
   }

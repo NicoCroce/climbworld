@@ -18,17 +18,17 @@
 
 h1.centered-title { 
 	text-align: center; margin: toemf(80px, 40px) 0px; font-size: toem(40px); color: rgb(148, 148, 148); 
-	@include text-shadow(black 1px 1px , #737070 2px 0px); text-transform: uppercase;
-	&:before { content: ""; border: 1px solid; position: absolute; width: 25%; left: $width_wrapper_header; margin-top: 32px; @include box-shadow(#3A3A3A 1px 1px 1px, #737070 2px 0px); text-transform: uppercase; }
-	&:after { content: ""; border: 1px solid; position: absolute; width: 25%; right: $width_wrapper_header; margin-top: 32px; @include box-shadow(#3A3A3A 1px 1px 1px, #737070 2px 0px); text-transform: uppercase; }
+	text-shadow: black 1px 1px , #737070 2px 0px; text-transform: uppercase;
+	&:before { content: ""; border: 1px solid; position: absolute; width: 25%; left: $width_wrapper_header; margin-top: 32px; box-shadow: 3A3A3A 1px 1px 1px, #737070 2px 0px; text-transform: uppercase; }
+	&:after { content: ""; border: 1px solid; position: absolute; width: 25%; right: $width_wrapper_header; margin-top: 32px; box-shadow: 3A3A3A 1px 1px 1px, #737070 2px 0px; text-transform: uppercase; }
 }
 
 
 .bg-header-mobile { 
 	display: none; position: fixed; background: rgba(25, 25, 25, 0.59); width: 100%; z-index: 11; padding: 15px;
-	@include transition(all .4s ease);
+	transition: all .4s ease;
 	&.hidden-bg { background: transparent; }
-	&.hidden { @include translate3d(0,-100%,0); }
+	&.hidden { transform: translate3d(0,-100%,0); }
 }
 
 .no-scroll { overflow: hidden !important; }
@@ -45,16 +45,16 @@ main { height: 100%; }
 			.mask {
 				width: calc(100%); height: 300px; overflow: hidden; position: relative;
 				// &.img0-selected {
-				// 	div { @include translate3d(0, 0, 0); }
+				// 	div { transform: translate3d(0, 0, 0); }
 				// }
 				// &.img1-selected {
-				// 	div { @include translate3d(-100%, 0, 0); }
+				// 	div { transform: translate3d(-100%, 0, 0); }
 				// }
 				// &.img2-selected {
-				// 	div { @include translate3d(-200%, 0, 0); }
+				// 	div { transform: translate3d(-200%, 0, 0); }
 				// }
 				div {
-					width: 620px; height: 100%; position: absolute; background-size: cover; @include transition (all, .4s ease-in); 
+					width: 620px; height: 100%; position: absolute; background-size: cover; transition: all, .4s ease-in; 
 					margin-right: -7px;
 					&.img1 { background: url(../img/img-11.jpg); background-size: cover; background-repeat: no-repeat; width: 100%;}
 					&.img2 { background: url(../img/img-22.jpg); background-size: cover; background-repeat: no-repeat; width: 100%;}
@@ -67,8 +67,8 @@ main { height: 100%; }
 			.prev, .next {  
 				width: 30px; height: 30px; background: #4A4A4A; border: 1px solid #404040; color: #B7B7B7; text-align: center; 
 				font-weight: bold; display: table;
-				@include transition (all .2s ease-in);
-				&:hover { background: #888686; cursor: pointer; @include scale3d(1.03 1.03 1.03); background: #fdca2e; color: #000000; }
+				transition: all .2s ease-in;
+				&:hover { background: #888686; cursor: pointer; transform: scale3d(1.03 1.03 1.03); background: #fdca2e; color: #000000; }
 				&:before { display: table-cell; vertical-align: middle; }
 			}
 		}
@@ -76,19 +76,19 @@ main { height: 100%; }
 }
 
 .fade-in-grow {
-	@include animation(fadeInGrow 1s ease forwards);
+	animation: fadeInGrow 1s ease forwards;
 }
 
 .fade-out-grow {
-	@include animation(fadeOutGrow 1s ease forwards);
+	animation: fadeOutGrow 1s ease forwards;
 }
 
 .block-right { 
 	width: 30%; background: #E2E0D7; position: absolute; right: $width_wrapper_header; top: 130px; z-index: 3; 
-	@include box-shadow( rgba(0, 0, 0, 0.53) 3px 3px 15px ); height: 366px;
+	box-shadow: rgba(0, 0, 0, 0.53) 3px 3px 15px; height: 366px;
 	.content-aside {
 		padding: 40px; 
-		// @include transition (all .2s ease);
+		// transition: all .2s ease;
 		.title-aside { text-transform: uppercase; text-align: center; font-size: toem(20px); margin-bottom: 40px; }
 	}
 }
@@ -100,13 +100,13 @@ main { height: 100%; }
 .list-products {
 	overflow: auto; margin-bottom: 30px;
 	.product-element {
-		background-size: cover; background-repeat: no-repeat; position: relative; @include box-shadow ( black 3px 3px 10px );
+		background-size: cover; background-repeat: no-repeat; position: relative; box-shadow: black 3px 3px 10px;
 		@include column(1/4, $gutter: 4, $cycle: 4); margin-bottom: 3%; cursor: pointer; overflow: hidden;
 		
-		img{ @include transition(all .3s ease-out); width: 103%; }
+		img{ transition: all .3s ease-out; width: 103%; }
 		.hover-element { 
 			width: 100%; height: 100%; background: rgba(253, 202, 46, 0.24); position: absolute; top: 0; 
-			opacity: 0; @include transition(all .3s ease-out);
+			opacity: 0; transition: all .3s ease-out;
 			.img-buy { height: 100%; background-size: 20%; background-repeat: no-repeat; background-position: center center; 
 				background-position: center center; 
 				background-image: url(../img/icono-carrito-tititnins.png); 
@@ -114,7 +114,7 @@ main { height: 100%; }
 		}
 		&:hover {
 			.hover-element { opacity: 1; }
-			img{ @include scale3d(1.05, 1.05, 1.05); }
+			img{ transform: scale3d(1.05, 1.05, 1.05); }
 		}
 	}
 }
@@ -167,17 +167,17 @@ main { height: 100%; }
 	span { 
 		cursor: pointer; text-shadow: 1px 2px 4px #565656;
 		&:before {     border: 3px solid #5F5F5F; border-radius: 50px; }
-		// @include animation(growRow 1.5s linear infinite);  
+		// animation: growRow 1.5s linear infinite;  
 	} 
 }
 
 .menu-mobile {
 	height: 200%; position: fixed; z-index: 10; width: 70%; background: rgb(24, 24, 26);
-	@include transition(all .4s ease);
-	@include opacity(1);
+	transition: all .4s ease;
+	opacity: 1;
 	&.hidden { 
-		@include translate3d(-100%, 0, 0);
-		@include opacity(0);
+		transform: translate3d(-100%, 0, 0);
+		opacity: 0;
 	}
 	.img-logo-mobile { content: url(../img/logo-principal.png); right: toem(30px); width: toem(140px); position: absolute; top: 30px; }
 }
@@ -190,9 +190,9 @@ main { height: 100%; }
 	li { 
 		a {
 			display:block; color:#EAEAEA; padding: 15px 20px; position:relative; box-shadow: 0px -10px 7px -7px rgba(253, 202, 46, 0) inset;
-		    @include transition(all .3s ease-in .1s);
+		    transition: all .3s ease-in .1s;
 		    &:before {
-		    	@include transition(all .3s ease-in);
+		    	transition: all .3s ease-in;
 		    	content:""; display:block; position:absolute; left:50%; bottom:0; 
 			    height:2px; width:0; background: $first_color_Yellow;
 		    }
@@ -215,32 +215,32 @@ main { height: 100%; }
 }
 
 .bt-mnenu { 
-	width: 25px; cursor: pointer; z-index: 101; @include transition(all .3s ease);
+	width: 25px; cursor: pointer; z-index: 101; transition: all .3s ease;
 	div	{
-		@include transition(all .3s ease);
+		transition: all .3s ease;
 		height: 2px; background: #FDCA2E; margin-bottom: 5px;
 		&:last-child { margin: 0; }
 	}
 	&:hover div { background: #FDCA2E; }
 	&.opened { 
-		@include transform3d(rotate3d(0, 0, 1, 180deg));
+		transform: rotate3d(0, 0, 1, 180deg);
 		div {
 			background: #FDCA2E;
-			&:nth-child(1){ @include transform3d(rotate3d(0, 0, 1, 31deg) translate3d(0, 3px, 0)); margin-left: 10px; width: 18px; }
-			&:nth-child(3){ @include transform3d(rotate3d(0, 0, 1, -31deg) translate3d(0, -3px, 0)); margin-left: 10px; width: 18px; }
-			// &:nth-child(2){ @include opacity(0); }
+			&:nth-child(1){ transform: rotate3d(0, 0, 1, 31deg) translate3d(0, 3px, 0); margin-left: 10px; width: 18px; }
+			&:nth-child(3){ transform: rotate3d(0, 0, 1, -31deg) translate3d(0, -3px, 0); margin-left: 10px; width: 18px; }
+			// &:nth-child(2){ opacity: 0; }
 		}
 	}
 }
 
 // .options-open {
 // 	.main {
-// 		@include translate3d(-30%, 0, 0);
-// 		// @include transition (all, .2s, ease);
-// 		@include opacity(0.7);
+// 		transform: translate3d(-30%, 0, 0);
+// 		// transition: all, .2s, ease;
+// 		opacity: 0.7;
 // 	}
 // }
 // .options-close .main {
-// 	@include transform3d(translate3d(0, 0, 0));
-// 	@include opacity(1);
+// 	transform: translate3d(0, 0, 0);
+// 	opacity: 1;
 // }
