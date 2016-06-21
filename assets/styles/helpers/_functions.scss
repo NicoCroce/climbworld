@@ -21,7 +21,12 @@
 
 @function toem($target, $context: $base_font-size) {
    @if $target == 0 { @return 0 }
-   @return $target / $context + 0em;
+   @return ($target / $context) * 1em;
+}
+
+@function toemf($target, $context) {
+   @if $target == 0 { @return 0 }
+   @return ($target / $context) * 1em;
 }
 
 // ----- Convert to REMs function ----- //
