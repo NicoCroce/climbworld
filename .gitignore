@@ -1,11 +1,3 @@
-.settings
-.svn
-.project
-*.map
-*.scssc
-jeet/
-normalize/
 node_modules/
-bower_components/
-static/styles/libs/*
-dev/css/*
+dev/
+dist/
