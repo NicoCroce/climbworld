@@ -165,8 +165,8 @@ main { height: 100%; }
 .arrow-down {
 	 font-size: 40px; text-align: center; width: 100%; position: relative; line-height: 4; color: #5F5F5F; display: block;
 	span { 
-		cursor: pointer; text-shadow: 1px 2px 4px #565656;
-		&:before {     border: 3px solid #5F5F5F; border-radius: 50px; }
+		cursor: pointer; /*text-shadow: 1px 2px 4px #565656;*/
+		&:before { border: 3px solid #5F5F5F; border-radius: 50px; }
 		// animation: growRow 1.5s linear infinite;  
 	} 
 }
