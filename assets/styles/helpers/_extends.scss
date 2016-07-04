@@ -15,7 +15,7 @@
 //   Base
 // -------------------------------------
 
-keyframes(stackBar) {
+@keyframes stackBar {
     0% {
       height: 0;
       opacity: 0;
@@ -32,7 +32,7 @@ keyframes(stackBar) {
     }
   }
 
-  keyframes(fadeIn){
+  @keyframes fadeIn {
   	0% {
   		opacity: 0;
   	}
@@ -41,7 +41,7 @@ keyframes(stackBar) {
   	}
   }
 
-  keyframes(grow-circle){
+  @keyframes grow-circle {
     0% {
       transform: scale3d(0, 0, 0);
       // opacity: 0;
@@ -52,7 +52,7 @@ keyframes(stackBar) {
     }
   }
 
-  keyframes(fadeInGrow){
+  @keyframes fadeInGrow {
     0% {
       transform: scale3d(2,2,2);
       opacity: 0;
@@ -63,7 +63,7 @@ keyframes(stackBar) {
     }
   }
 
-  keyframes(fadeOutGrow){
+  @keyframes fadeOutGrow {
     0%{
       transform: scale3d(1,1,1);
       opacity: 1;
@@ -74,7 +74,7 @@ keyframes(stackBar) {
     }
   }
 
-  keyframes(growRow){
+  @keyframes growRow {
     0% {
       transform: scale3d(1,1,1);
       opacity: 0;
