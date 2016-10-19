@@ -1,9 +1,22 @@
-{
-  "name": "Making Sense's UI Dev project Bower Dependencies.",
-  "version": "0.1.1",
+﻿{
+  "name": "UI-Premium-Framework",
+  "version": "1.0.0",
+  "homepage": "https://github.com/NicoCroce/UI-Premium-Framework",
+  "authors": [
+    "Nico Croce <ingcrocenicolas@outlook.com>"
+  ],
+  "description": "UI/Front",
+  "license": "MIT",
   "dependencies": {
-		"jeet.gs": "latest",
-		"normalize.scss": "2.2.0+normalize.2.1.3",
-		"jquery-latest": "jquery#latest"
-	}
+    "jquery": "~3.1.0",
+    "jeet": "https://github.com/mojotech/jeet.git#~6.1.4",
+    "normalize-scss": "normalize.scss#^5.0.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
