@@ -16,6 +16,10 @@ $headers-h4-font-size: 				toem(22px);
 $headers-h5-font-size: 				toem(18px);
 $headers-h6-font-size: 				toem(16px);
 
+$font_weight-light: 300;
+$font_weight-semibold: 600;
+$font_weight-bold: 700;
+
 // -------------------------------------
 //   Base
 // -------------------------------------
@@ -23,6 +27,8 @@ html,
 button {
   -webkit-font-smoothing: antialiased;
 }
+
+a, p, span { font-family: 'Titillium Web', sans-serif; }
 
 h1,
 h2,
@@ -33,20 +39,21 @@ h6 {
   font: $font;
   font-weight: 400;
   color: $font-color;
+  font-family: 'Titillium Web', sans-serif;
 }
 
-h1 {
-  margin: 0;
-  font-size: $headers-h1-font-size;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
+// h1 {
+//   margin: 0;
+//   font-size: $headers-h1-font-size;
+//   line-height: 1.2;
+//   text-transform: uppercase;
+// }
 
-h2 {
-  margin: 0;
-  font-size: $headers-h2-font-size;
-  line-height: 1.4;
-}
+// h2 {
+//   margin: 0;
+//   font-size: $headers-h2-font-size;
+//   line-height: 1.4;
+// }
 
 h3 {
   font-size: $headers-h3-font-size;

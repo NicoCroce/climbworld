@@ -40,11 +40,11 @@
 jQuery(document).ready(function($) {
     window.scrollTo(0,1);
 	// $('#headerSection').load('header.html');
-	$('#footerSection').load('partials/footer.html');
-	$('#homeSection').load('partials/home.html');
-	$('#companySection').load('partials/company.html');
-	$('#productsSection').load('partials/products.html');
-	$('#contactSection').load('partials/contact.html');
+	$('#footerSection').load('/partials/footer.html');
+	$('#homeSection').load('/partials/home.html');
+	$('#companySection').load('/partials/company.html');
+	$('#productsSection').load('/partials/products.html');
+	$('#contactSection').load('/partials/contact.html');
 	$(document).on('click', '.next', function(){
 		if (imgIndex == totalImg) {
 			$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-out-grow');
@@ -218,3 +218,52 @@ $(document).on('click', '#detalleProducto', function(){
     $('#detalleProducto').removeClass('opened');
     $('body').removeClass('no-scroll');
 })
+
+$(document).ready(function(){
+
+	var offsetScroll = 100;
+
+	$(window).scroll(function (event) {
+		console.log('entro');
+    	if (!isReady) { return; };
+
+	    var scroll = $(window).scrollTop();
+
+	    if (positions.navBar == 0) {
+	    	positions.navBar = $('.nav-bar').position().top;
+	    }
+
+	    if (scroll > beforeScroll) {
+	    	$('.bg-header-mobile').addClass('hidden');
+	    }else{
+	    	$('.bg-header-mobile').removeClass('hidden');
+	    }
+
+	    beforeScroll = scroll;
+	    if(scroll >= positions.navBar){
+	    	$('.nav-bar').addClass('stack-nav-bar');
+	    }else {
+	    	$('.nav-bar').removeClass('stack-nav-bar');
+	    }
+
+	    if (scroll >= height.header) {
+	    	$('.bg-header-mobile').removeClass('hidden-bg');
+	    }else{
+	    	$('.bg-header-mobile').addClass('hidden-bg');
+	    }
+        if(isClicked){
+            return;
+        }
+	    if (scroll < positions.company) {
+	    	changeSection('home');
+	    }else if(scroll < positions.products){
+	    	changeSection('company');
+	    }else if(scroll < positions.contact){
+	    	changeSection('products');
+	    }else{
+	    	changeSection('contact');
+	    }
+	});
+});
+
+//# sourceMappingURL=maps/script.js.map

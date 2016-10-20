@@ -39,8 +39,8 @@ HTML_FILES 			= SRC_HTML_BASE + '/**/*.html',
 JS_FILES 			= SRC_JAVASCRIPT_BASE + '/*.js',
 JS_FILES_BUNDLES 	= path.join(SRC_JAVASCRIPT_BASE, 'bundles') + '/**/*',
 IMAGES_FILES 		= SRC_IMAGES_BASE + '/**/*',
-ICON_FILES 			= SRC_FONTS_BASE + '/**/*';
-
+ICON_FILES 			= SRC_FONTS_BASE + '/**/*',
+JS_FILES_ORDER	= [SRC_JAVASCRIPT_BASE + '/script.js', SRC_JAVASCRIPT_BASE + '/scroll.js'];
 var ENVIRONMENT 	= FOLDER_DEV,
 runFirstTime 		= true;
 
@@ -177,7 +177,7 @@ function copyJsFunction() {
 }
 
 function jsConcatFunction(done) {
-	gulp.src(JS_FILES)
+	gulp.src(JS_FILES_ORDER)
 		.pipe(gulpif(ENVIRONMENT == FOLDER_DEV, sourcemaps.init()))
 		.pipe(concat('script.js')) // concat pulls all our files together before minifying them
 		.pipe(gulpif(ENVIRONMENT == FOLDER_DEV , sourcemaps.write('./maps')))

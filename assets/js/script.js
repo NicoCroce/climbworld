@@ -40,11 +40,11 @@
 jQuery(document).ready(function($) {
     window.scrollTo(0,1);
 	// $('#headerSection').load('header.html');
-	$('#footerSection').load('footer.html');
-	$('#homeSection').load('home.html');
-	$('#companySection').load('company.html');
-	$('#productsSection').load('products.html');
-	$('#contactSection').load('contact.html');
+	$('#footerSection').load('/partials/footer.html');
+	$('#homeSection').load('/partials/home.html');
+	$('#companySection').load('/partials/company.html');
+	$('#productsSection').load('/partials/products.html');
+	$('#contactSection').load('/partials/contact.html');
 	$(document).on('click', '.next', function(){
 		if (imgIndex == totalImg) {
 			$('.img'+imgIndex).removeClass('fade-in-grow').removeClass('fade-out-grow').addClass('fade-out-grow');
