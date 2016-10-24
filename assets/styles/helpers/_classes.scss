@@ -11,3 +11,7 @@
 // -------------------------------------
 //   Variables
 // -------------------------------------
+
+
+.animateblock { transition: all .5s ease-out; opacity: 0; }
+.fade-in-lc { margin-left: initial !important; opacity: 1; }

@@ -81,3 +81,6 @@ a {
 	&:active { outline: none; }
 	&:focus { outline: none; }
 }
+
+
+.center-wrapper { @include center-wrapper(); }

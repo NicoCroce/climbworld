@@ -128,7 +128,7 @@ main { height: 100%; }
 //*****************************************************************************************************************************
 	
 .block-text {
-	width: 60%; margin: 5%;
+	width: 60%; margin: 5%; margin-left: -25%;
 	.title-company-section { font-size: toem(30px); text-transform: uppercase; margin-bottom: 30px; font-weight: 700; }
 	.text-company { line-height: 2; }
 }

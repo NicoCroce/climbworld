@@ -18,6 +18,11 @@
   transition: all #{$time}s #{$tFunction};
 }
 
+@mixin center-wrapper($width: 80%){
+  margin: 0 auto;
+  max-width: 80%;
+}
+
 @mixin vertical-align($position: relative) {
   position: $position;
   top: 50%; 
