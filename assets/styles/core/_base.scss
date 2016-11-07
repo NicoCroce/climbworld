@@ -84,3 +84,5 @@ a {
 
 
 .center-wrapper { @include center-wrapper(); }
+
+#map { height: 450px; position: absolute; overflow: hidden; max-width: 450px; right: 0; top: 20%; border: 3px solid rgba(30, 30, 29, 0.53); border-radius: 10px; width: 100%; }
