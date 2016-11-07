@@ -40,6 +40,7 @@ var beforeScroll = 0;
 
 $(window).on("load", function() {
     initMap();
+    appendProducts();
 });
 
 $(document).ready(function() {
@@ -243,7 +244,17 @@ function initMap() {
     var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
-        title: 'Hello World!',
+        title: 'Climbworld',
         animation: google.maps.Animation.BOUNCE
     });
+}
+
+function appendProducts () {
+    $.get('/partials/templateProduct.html', function(template) {
+        for (var i = 0; i <= 20; i++) {
+            $('#productsList').append(template.replace("{{ productId }}", "productI"+i)
+                                            .replace("{{ imgURL }}", './img/img-'+i+'.jpg'));
+        }
+    });
+    // $('#productsList').append("");
 }
