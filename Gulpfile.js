@@ -32,13 +32,15 @@ var SRC_SASS_BASE 	= path.join(FOLDER_ASSETS, 'styles'),
 SRC_IMAGES_BASE 	= path.join(FOLDER_ASSETS, 'images'),
 SRC_FONTS_BASE 		= path.join(FOLDER_ASSETS, 'icons'),
 SRC_JAVASCRIPT_BASE = path.join(FOLDER_ASSETS, 'js'),
-SRC_HTML_BASE 		= path.join(FOLDER_ASSETS, 'templates');
+SRC_HTML_BASE 		= path.join(FOLDER_ASSETS, 'templates'),
+SRC_DATA_BASE 		= path.join(FOLDER_ASSETS, 'data');
 
 var SASS_FILES 		= SRC_SASS_BASE + '/**/*.scss',
 HTML_FILES 			= SRC_HTML_BASE + '/**/*.html',
 JS_FILES 			= SRC_JAVASCRIPT_BASE + '/*.js',
 JS_FILES_BUNDLES 	= path.join(SRC_JAVASCRIPT_BASE, 'bundles') + '/**/*',
 IMAGES_FILES 		= SRC_IMAGES_BASE + '/**/*',
+DATA_FILES 			= SRC_DATA_BASE + '/**/*',
 ICON_FILES 			= SRC_FONTS_BASE + '/**/*',
 JS_FILES_ORDER	= [SRC_JAVASCRIPT_BASE + '/script.js', SRC_JAVASCRIPT_BASE + '/scroll.js'];
 var ENVIRONMENT 	= FOLDER_DEV,
@@ -60,6 +62,8 @@ gulp.task("copyTemplates", gulp.series(cleanTemplates, copyTemplatesFunction));
 
 gulp.task("copyImg", gulp.series(cleanImg, copyImgFunction));
 
+gulp.task("copyData", gulp.series(cleanData, copyDataFunction));
+
 gulp.task("copyIcons", gulp.series(cleanIcons, copyIconsFunction));
 
 gulp.task("copyJs", gulp.series(cleanJs, copyJsFunction));
@@ -74,12 +78,13 @@ gulp.task("watch", function (done) {
 	gulp.watch(JS_FILES, gulp.series("jsConcat", "copyJs"));
 	gulp.watch(ICON_FILES, gulp.series('copyIcons'));
 	gulp.watch(IMAGES_FILES, gulp.series("copyImg"));
+	gulp.watch(DATA_FILES, gulp.series("copyData"));
 	return done();
 });
 
-gulp.task('connect', gulp.series(copyBower, gulp.parallel(copyTemplatesFunction, sassFunction, "jsConcat", copyImgFunction, copyIconsFunction), connectServer));
+gulp.task('connect', gulp.series(copyBower, gulp.parallel(copyTemplatesFunction, sassFunction, "jsConcat", copyImgFunction, copyIconsFunction, copyDataFunction), connectServer));
 
-gulp.task('deployTasks', gulp.series(copyBower, gulp.parallel(copyTemplatesFunction, sassFunction, "jsConcat", copyImgFunction, copyIconsFunction)));
+gulp.task('deployTasks', gulp.series(copyBower, gulp.parallel(copyTemplatesFunction, sassFunction, "jsConcat", copyImgFunction, copyIconsFunction, copyDataFunction)));
 
 
 //*************************************    SECCIÓN  Functions    *************************************
@@ -107,6 +112,11 @@ function cleanTemplates(done) {
 function cleanImg() {
 	return del([FOLDER_DEV + '/img']);
 };
+
+function cleanData() {
+	return del([FOLDER_DEV + '/data']);
+};
+
 
 function cleanIcons(done) {
 	del([FOLDER_DEV + '/css/styleIcons.css']);
@@ -159,6 +169,12 @@ function copyImgFunction() {
 	showComment('Copying Images Files');
 	return gulp.src(IMAGES_FILES)
 		.pipe(gulp.dest(path.join(ENVIRONMENT, 'img'))).on('error', gutil.log);
+};
+
+function copyDataFunction() {
+	showComment('Copying Data Files');
+	return gulp.src(DATA_FILES)
+		.pipe(gulp.dest(path.join(ENVIRONMENT, 'data'))).on('error', gutil.log);
 };
 
 function copyIconsFunction(done) {

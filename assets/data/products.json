@@ -1,0 +1,12 @@
+{
+	"products" : [
+		{
+			"img" : "./img/img-1.jpg",
+			"nombre" : "Pantalón",
+			"precio" : 200,
+			"detalleUno" : "Algo 1",
+			"detalleDos" : "Algo 2",
+			"colores" : ["negro", "blanco"] 
+		}
+	]
+}
