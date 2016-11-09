@@ -1,20 +1,20 @@
 "use strict";
 //******************************************    seccion variables    ******************************************
-var imgIndex = 1;
-var totalImg = 3;
-var sectionName = "";
-var isClicked = false;
-var height = {
-    header: '',
-    navBar: '',
-    home: '',
-    company: '',
-    products: '',
-    contact: '',
-    imgCarousel: '',
-    homeHuge: '',
-    homeNormal: ''
-};
+var imgIndex = 1,
+    totalImg = 3,
+    sectionName = "",
+    isClicked = false,
+    height = {
+        header: '',
+        navBar: '',
+        home: '',
+        company: '',
+        products: '',
+        contact: '',
+        imgCarousel: '',
+        homeHuge: '',
+        homeNormal: ''
+    };
 
 var positions = {
     navBar: '',
@@ -30,10 +30,11 @@ if (window.location.hash !== "") {
     strHash = strHash.replace("#", "");
 }
 
-var isReady = false;
-var closedMenu = true;
-var startedAnim = false;
-var beforeScroll = 0;
+var isReady = false,
+    productsList = null,
+    closedMenu = true,
+    startedAnim = false,
+    beforeScroll = 0;
 //**********************************************************************************************
 
 //******************************************    onLoad    ******************************************
@@ -219,8 +220,17 @@ function changeStateClick() {
 /*MODAL*/
 
 $(document).on('click', '.product-element', function() {
-    $('#detalleProducto').addClass('opened');
-    $('body').addClass('no-scroll');
+    var idProd = $(this).attr('id').replace('productId', '');
+    $.get('./partials/templateProductDetail.html', function(template) {
+        var prodDetail = productsList[idProd];
+        $('#detalleProducto').append(template.replace('{{ productName }}', prodDetail.nombre)
+            .replace('{{ detailOne }}', prodDetail.detalleUno)
+            .replace('{{ detailTwo }}', prodDetail.detalleDos)
+            .replace('{{ price }}', prodDetail.precio)
+            .replace('{{ img }}', prodDetail.img));
+        $('#detalleProducto').addClass('opened');
+        $('body').addClass('no-scroll');
+    });
 });
 
 $(document).on('click', '#detalleProducto', function() {
@@ -251,19 +261,19 @@ function initMap() {
 
 function appendProducts(prods) {
     $.get('/partials/templateProduct.html', function(template) {
-        prods.forEach( function(prod, index) {
-            $('#productsList').append(template.replace("{{ productId }}", "productI" + index)
+        prods.forEach(function(prod, index) {
+            $('#productsList').append(template.replace("{{ productId }}", "productId" + index)
                 .replace("{{ imgURL }}", prod.img));
         });
     });
-    // $('#productsList').append("");
 }
 
 
 function getDataProducts() {
     $.ajax("./data/products.json")
         .done(function(response) {
-            appendProducts(response.products);
+            productsList = response.products;
+            appendProducts(productsList);
         })
         .fail(function() {
             console.log("error");
