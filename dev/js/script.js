@@ -219,18 +219,35 @@ function changeStateClick() {
 
 /*MODAL*/
 
+// $(document).on('click', '.product-element', function() {
+    // var idProd = $(this).attr('id').replace('productId', '');
+    // $('#modal-product').remove();
+    // $.get('./partials/templateProductDetail.html', function(template) {
+    //     var prodDetail = productsList[idProd];
+    //     $('#detalleProducto').append(template.replace('{{ productName }}', prodDetail.nombre)
+    //         .replace('{{ detailOne }}', prodDetail.detalleUno)
+    //         .replace('{{ detailTwo }}', prodDetail.detalleDos)
+    //         .replace('{{ price }}', prodDetail.precio)
+    //         .replace('{{ img }}', prodDetail.img));
+    //     $('#detalleProducto').addClass('opened');
+    //     $('body').addClass('no-scroll');
+    // });
+// });
+
 $(document).on('click', '.product-element', function() {
     var idProd = $(this).attr('id').replace('productId', '');
-    $.get('./partials/templateProductDetail.html', function(template) {
-        var prodDetail = productsList[idProd];
-        $('#detalleProducto').append(template.replace('{{ productName }}', prodDetail.nombre)
+    var prodDetail = productsList[idProd];
+
+    $('#detalleProducto').html(function (i, html) {
+        return html.replace('{{ productName }}', prodDetail.nombre)
             .replace('{{ detailOne }}', prodDetail.detalleUno)
             .replace('{{ detailTwo }}', prodDetail.detalleDos)
             .replace('{{ price }}', prodDetail.precio)
-            .replace('{{ img }}', prodDetail.img));
-        $('#detalleProducto').addClass('opened');
-        $('body').addClass('no-scroll');
+            .replace('{{ img }}', prodDetail.img);
     });
+
+    $('#detalleProducto').addClass('opened');
+    $('body').addClass('no-scroll');
 });
 
 $(document).on('click', '#detalleProducto', function() {

@@ -19,8 +19,8 @@
 h1.centered-title {
 	text-align: center; margin: toem(80px, 40px) 0px; font-size: toem(40px); color: rgb(148, 148, 148);
 	text-shadow: black 1px 1px , #737070 2px 0px; text-transform: uppercase;
-	&:before { content: ""; border: 1px solid; position: absolute; width: 25%; left: $width_wrapper_header; margin-top: 32px; box-shadow: 3A3A3A 1px 1px 1px, #737070 2px 0px; text-transform: uppercase; }
-	&:after { content: ""; border: 1px solid; position: absolute; width: 25%; right: $width_wrapper_header; margin-top: 32px; box-shadow: 3A3A3A 1px 1px 1px, #737070 2px 0px; text-transform: uppercase; }
+	&:before { content: ""; border: 1px solid; position: absolute; width: 25%; left: 0; margin-top: 32px; box-shadow: 3A3A3A 1px 1px 1px, #737070 2px 0px; text-transform: uppercase; }
+	&:after { content: ""; border: 1px solid; position: absolute; width: 25%; right: 0; margin-top: 32px; box-shadow: 3A3A3A 1px 1px 1px, #737070 2px 0px; text-transform: uppercase; }
 }
 
 

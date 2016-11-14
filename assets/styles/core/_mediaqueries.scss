@@ -28,6 +28,8 @@ $mediaquery_phones-small--portrait: 	480px;
 
 	.block-right { right: $width_wrapper_header; }
 	.main-section--home{ width: $width_wrapper; }
+
+	#map { max-width: 250px; }
 }
 
 @media screen and (max-width: $mediaquery_tablets) {
@@ -64,12 +66,14 @@ $mediaquery_phones-small--portrait: 	480px;
 		&::after { width:20% }
 	}
 
+	#map { position: relative !important; width: 100%; max-width: 2000px; height: 300px; }
+
 	.list-products .product-element { @include column(1/2, $gutter: 2, $uncycle: 3, $cycle: 2); }
 	.list-products .product-element.most-important {  @include column(1/1, $uncycle: 2, $gutter: 1, $cycle: 1); }
 
 	.main-section--home {
 		height: calc(100% - 220px);
-		.arrow-down { height: calc(100% - 540px); }
+		.arrow-down { height: calc(100% - 545px); }
 		.block-right { margin: toem(80px) 0; }
 	}
 
@@ -88,9 +92,9 @@ $mediaquery_phones-small--portrait: 	480px;
 	}
 	.bg-header-mobile { display: block; }
 
-	.arrow-down {
-		line-height: 2;
-		span { font-size: 0.6em; }
+	.main-section--home .arrow-down {
+		height: calc(100% - 335px);
+		span { font-size: 0.6em; } 
 	}
 
 
