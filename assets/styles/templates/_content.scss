@@ -101,8 +101,14 @@ main { height: 100%; }
 	overflow: auto; margin-bottom: 30px;
 	.product-element {
 		background-size: cover; background-repeat: no-repeat; position: relative; box-shadow: black 3px 3px 10px;
-		@include column(1/4, $gutter: 4, $cycle: 4); margin-bottom: 3%; cursor: pointer; overflow: hidden; font-size: 0;
-
+		@include column(1/4, $gutter: 4, $cycle: 4); margin-bottom: 3%; cursor: pointer; overflow: hidden; font-size: 20px;
+		max-height: 119px; font-size: 0;
+		transition: all .3s ease;
+		// .title-product { font-size: 0; }
+		&.is-opened { 
+			max-height: 300px; font-size: 20px;
+			// .title-product { font-size: 20px; }
+		}
 		img{ transition: all .3s ease-out; width: 103%; }
 		.hover-element {
 			width: 100%; height: 100%; background: rgba(253, 202, 46, 0.24); position: absolute; top: 0;
