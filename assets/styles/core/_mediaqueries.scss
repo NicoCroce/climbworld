@@ -134,7 +134,13 @@ $mediaquery_phones-small--portrait: 	480px;
         }
     }
 
-    .list-products .product-element { @include column(1/1, $gutter: 1, $uncycle: 0, $cycle: 0); }
+    .list-products .product-element { 
+    	@include column(1/1, $gutter: 1, $uncycle: 0, $cycle: 0); 
+    	&.is-opened { 
+    		margin: 15% 0;
+    		.urlPay { padding: 10px 0; }
+    	}
+    }
 
 	// .block-footer { padding: 20px; }
 	// h3 { margin-bottom: 10px;  font-family: 'Quicksand', sans-serif; ext-transform: uppercase; font-weight: 600; }

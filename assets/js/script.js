@@ -287,7 +287,8 @@ function appendProducts(prods) {
                 .replace("{{ imgURL }}", prod.img)
                 .replace("{{ detailOne }}", prod.detalleUno)
                 .replace("{{ detailTwo }}", prod.detalleDos)
-                .replace("{{ price }}", prod.precio));
+                .replace("{{ price }}", prod.precio)
+                .replace("{{ urlPay }}", prod.urlPago));
         });
     });
 }
