@@ -33,7 +33,6 @@ if (window.location.hash !== "") {
 var isReady = false,
     productsList = null,
     closedMenu = true,
-    startedAnim = false,
     beforeScroll = 0;
 //**********************************************************************************************
 
@@ -134,27 +133,17 @@ $(document).ready(function() {
     });
 
     $('#btMenu').click(function(event) {
-        if (startedAnim) {
-            return;
-        }
         if (!closedMenu) {
-            startedAnim = true;
             $(this).removeClass('opened');
             $('#menuMobile').addClass('hidden');
             $('body').removeClass('menu-opened');
-            setTimeout(function() {
-                startedAnim = false;
-                closedMenu = true;
-            }, 500);
+            closedMenu = true;
         } else {
-            startedAnim = true;
             $(this).addClass('opened');
             $('#menuMobile').removeClass('hidden');
             $('body').addClass('menu-opened');
             closedMenu = false;
-            setTimeout(function() {
-                startedAnim = false;
-            }, 2000);
+            startedAnim = false;
         }
     });
 });
