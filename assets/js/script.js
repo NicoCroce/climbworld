@@ -143,7 +143,6 @@ $(document).ready(function() {
             $('#menuMobile').removeClass('hidden');
             $('body').addClass('menu-opened');
             closedMenu = false;
-            startedAnim = false;
         }
     });
 });
@@ -166,10 +165,6 @@ function selectSection(elemento, seleccionado, e) {
         changeSection(sectionName);
     } else {
         sectionName = elemento;
-        /*$("#"+elemento).addClass('active');
-        $("#"+elemento+'Mobile').addClass('active');*/
-        var sectionId = elemento + 'Section';
-        // scrollToAnchor(sectionId);
     }
     e.preventDefault();
     e.stopPropagation();

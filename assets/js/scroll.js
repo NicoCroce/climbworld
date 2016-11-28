@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-    var offsetScroll = 100;
-
     $(window).scroll(function(event) {
         console.log('entro');
         if (!isReady) {
@@ -51,8 +49,7 @@ $(document).ready(function() {
     function animate_elems() {
         var wintop = $(window).scrollTop(), // calculate distance from top of window
             allElemmentsToAnimate = $('.animateblock'),
-            winheight = $(window).height(),
-            fullheight = $(document).height();
+            winheight = $(window).height();
 
         // loop through each item to check when it animates
         allElemmentsToAnimate.each(function() {

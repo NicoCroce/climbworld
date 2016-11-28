@@ -16,8 +16,7 @@ var gulp 			= require("gulp"),//http://gulpjs.com/
 	del 			= require('del'),
 	gpUglify 		= require('gulp-uglify'),
 	gulpif 			= require('gulp-if'),
-
-	// imagemin = require('gulp-imagemin'),
+	imagemin 		= require('gulp-imagemin'),
 	log 			= gutil.log;
 
 
@@ -42,10 +41,34 @@ JS_FILES_BUNDLES 	= path.join(SRC_JAVASCRIPT_BASE, 'bundles') + '/**/*',
 IMAGES_FILES 		= SRC_IMAGES_BASE + '/**/*',
 DATA_FILES 			= SRC_DATA_BASE + '/**/*',
 ICON_FILES 			= SRC_FONTS_BASE + '/**/*',
-JS_FILES_ORDER	= [SRC_JAVASCRIPT_BASE + '/script.js', SRC_JAVASCRIPT_BASE + '/scroll.js'];
+JS_FILES_ORDER		= [SRC_JAVASCRIPT_BASE + '/script.js', SRC_JAVASCRIPT_BASE + '/scroll.js'];
+
 var ENVIRONMENT 	= FOLDER_DEV,
 runFirstTime 		= true;
 
+var uglifyOptions = {
+	compress: {
+		sequences     : true,  // join consecutive statemets with the “comma operator”
+		properties    : true,  // optimize property access: a["foo"] → a.foo
+		dead_code     : true,  // discard unreachable code
+		drop_debugger : true,  // discard “debugger” statements
+		unsafe        : false, // some unsafe optimizations (see below)
+		conditionals  : true,  // optimize if-s and conditional expressions
+		comparisons   : true,  // optimize comparisons
+		evaluate      : true,  // evaluate constant expressions
+		booleans      : true,  // optimize boolean expressions
+		loops         : true,  // optimize loops
+		unused        : true,  // drop unused variables/functions
+		hoist_funs    : true,  // hoist function declarations
+		hoist_vars    : false, // hoist variable declarations
+		if_return     : true,  // optimize if-s followed by return/continue
+		join_vars     : true,  // join var declarations
+		cascade       : true,  // try to cascade `right` into `left` in sequences
+		side_effects  : true,  // drop side-effect-free statements
+		warnings      : true,  // warn about potentially dangerous optimizations/code
+		global_defs   : {}     // global definitions
+	}
+};
 
 //*************************************    SECCIÓN  Tasks    *************************************
 
@@ -84,7 +107,7 @@ gulp.task("watch", function (done) {
 
 gulp.task('connect', gulp.series(copyBower, gulp.parallel(copyTemplatesFunction, sassFunction, "jsConcat", copyImgFunction, copyIconsFunction, copyDataFunction), connectServer));
 
-gulp.task('deployTasks', gulp.series(copyBower, gulp.parallel(copyTemplatesFunction, sassFunction, "jsConcat", copyImgFunction, copyIconsFunction, copyDataFunction)));
+gulp.task('deployTasks', gulp.series(copyBower, gulp.parallel(copyTemplatesFunction, sassFunction, "jsConcat", compressImg, copyIconsFunction, copyDataFunction), connectServer));
 
 
 //*************************************    SECCIÓN  Functions    *************************************
@@ -130,7 +153,7 @@ function cleanJs(done) {
 
 function connectServer(done) {
 	connect.server({
-		root: FOLDER_DEV,
+		root: ENVIRONMENT,
 		port: serverPort
 	});
 	return done();
@@ -140,11 +163,11 @@ function sassFunction() {
 	showComment('Changed SASS File');
 	return gulp.src(SRC_SASS_BASE + '/style.scss')
 		.pipe(sourcemaps.init())
-		.pipe(sass())
+		.pipe(gulpif(ENVIRONMENT == FOLDER_DEV, sass()))
+		.pipe(gulpif(ENVIRONMENT == FOLDER_BUILD, sass({outputStyle: 'compressed'})))
 		.pipe(autoprefixer())
 		.pipe(rename('style.css'))
 		.pipe(gulpif(ENVIRONMENT == FOLDER_DEV, sourcemaps.write('./maps')))
-		.pipe(gulpif(ENVIRONMENT == FOLDER_BUILD, cleanCSS()))
 		.pipe(gulp.dest(path.join(ENVIRONMENT, 'css'))).on('error', gutil.log);
 };
 
@@ -192,12 +215,18 @@ function copyJsFunction() {
 		.pipe(gulp.dest(ENVIRONMENT + '/js/bundles'));
 }
 
+function compressImg () {
+	return gulp.src(SRC_IMAGES_BASE+'/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest(ENVIRONMENT + '/img'));
+}
+
 function jsConcatFunction(done) {
 	gulp.src(JS_FILES_ORDER)
 		.pipe(gulpif(ENVIRONMENT == FOLDER_DEV, sourcemaps.init()))
 		.pipe(concat('script.js')) // concat pulls all our files together before minifying them
 		.pipe(gulpif(ENVIRONMENT == FOLDER_DEV , sourcemaps.write('./maps')))
-		.pipe(gulpif(ENVIRONMENT == FOLDER_BUILD, gpUglify()))
+		.pipe(gulpif(ENVIRONMENT == FOLDER_BUILD, gpUglify(uglifyOptions)))
 		.pipe(gulp.dest(path.join(ENVIRONMENT, 'js'))).on('error', gutil.log);
 	done();
 }
@@ -245,10 +274,9 @@ gulp.task('default', gulp.series(setEnvironmentEnv, clean, 'connect', 'watch', f
 	finishMsg('YOU CAN START YOUR WORK in http://localhost:' + serverPort + ' GOOD CODE...');
 }));
 
-gulp.task('deploy', gulp.series(setEnvironmentProd, clean, 'deployTasks', function runDeploy(done) {
+gulp.task('deploy', gulp.series(setEnvironmentProd, clean, 'deployTasks', function runDeploy() {
 	runFirstTime = false;
 	finishMsg('IS DEPLOYED in "' + FOLDER_BUILD + '" folder');	
-	done();
 }));
 
 // gulp.task('deploy', ['copyTemplates'], function () {
