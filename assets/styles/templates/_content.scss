@@ -102,12 +102,12 @@ main { height: 100%; }
 	.product-element {
 		background-size: cover; background-repeat: no-repeat; position: relative; box-shadow: black 3px 3px 10px;
 		@include column(1/4, $gutter: 4, $cycle: 4); margin-bottom: 3%; cursor: pointer; overflow: hidden; font-size: 20px;
-		max-height: 119px; font-size: 0; background: #f3f3f3;
+		max-height: 190px; font-size: 0; background: #f3f3f3;
 		transition: all .3s ease;
 		.urlPay { transition: none; background: #73A773; }
 		// .title-product { font-size: 0; }
 		&.is-opened { 
-			max-height: 450px; font-size: 20px;
+			max-height: 700px; font-size: 20px;
 			&:first-of-type { margin-top: 0; }
 			.title-product { text-align: center; padding: 10px 0; text-transform: uppercase; background: url(../img/bg-footer-noise.jpg); font-weight: bold; border: 2px solid rgba(0, 0, 0, 0.8); color: white; }
 			ul { padding: 10px; font-size: 14px; }

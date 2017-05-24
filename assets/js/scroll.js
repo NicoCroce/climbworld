@@ -1,6 +1,11 @@
 $(document).ready(function() {
+    setScrollAspect();
 
     $(window).scroll(function(event) {
+        setScrollAspect();
+    });
+
+    function setScrollAspect() {
         console.log('entro');
         if (!isReady) {
             return;
@@ -44,7 +49,7 @@ $(document).ready(function() {
         }
 
         animate_elems();
-    });
+    }
 
     function animate_elems() {
         var wintop = $(window).scrollTop(), // calculate distance from top of window

@@ -25,10 +25,6 @@ var positions = {
 };
 
 var offset;
-if (window.location.hash !== "") {
-    var strHash = window.location.hash;
-    strHash = strHash.replace("#", "");
-}
 
 var isReady = false,
     productsList = null,
@@ -128,7 +124,7 @@ $(document).ready(function() {
         $('html, body').stop().animate({
             'scrollTop': $target.offset().top
         }, 900, 'swing', function() {
-            // window.location.hash = target.replace('Section', '');
+            window.location.hash = target.replace('Section', '');
         });
     });
 
@@ -145,6 +141,16 @@ $(document).ready(function() {
             closedMenu = false;
         }
     });
+
+    (function init(){
+        setTimeout(function(){
+            if (window.location.hash !== "") {
+                var strHash = window.location.hash;
+                strHash = strHash.replace("#", "");
+                scrollToAnchor(strHash + 'Section');
+            }
+        }, 1000)
+    })();
 });
 
 // **********************    END READY    ******************************
@@ -176,16 +182,16 @@ function selectSection(elemento, seleccionado, e) {
 
 //**********************************    SECCIÓN  scroll    *************************************
 
-var changeSection = function(section) {
+function changeSection(section) {
     sectionName = section;
     $('.bt-section').removeClass('active');
     $('#' + section).addClass('active');
     $('#' + section + 'Mobile').addClass('active');
-    // event.preventDefault();
-    // window.location.hash = section;
+    event.preventDefault();
+    window.location.hash = section;
 };
 
-function scrollToAnchor(sectionToScroll) {
+function scrollToAnchor(sectionToScroll) {;
     var aTag = $("#" + sectionToScroll + "");
     $('html,body').animate({
         scrollTop: aTag.offset().top
@@ -292,8 +298,13 @@ function getDataProducts() {
         });
 }
 $(document).ready(function() {
+    setScrollAspect();
 
     $(window).scroll(function(event) {
+        setScrollAspect();
+    });
+
+    function setScrollAspect() {
         console.log('entro');
         if (!isReady) {
             return;
@@ -337,7 +348,7 @@ $(document).ready(function() {
         }
 
         animate_elems();
-    });
+    }
 
     function animate_elems() {
         var wintop = $(window).scrollTop(), // calculate distance from top of window

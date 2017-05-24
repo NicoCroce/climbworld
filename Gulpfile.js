@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var  serverPort 	= 2173;
+var  serverPort 	= 2174;
 
 var gulp 			= require("gulp"),//http://gulpjs.com/
 	gutil 			= require("gulp-util"),//https://github.com/gulpjs/gulp-util

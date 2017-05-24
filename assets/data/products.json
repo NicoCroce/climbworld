@@ -1,8 +1,8 @@
 {
 	"products" : [
 		{
-			"img" : "./img/img-1.jpg",
-			"nombre" : "Pantalón",
+			"img" : "./img/Climbworld_Camuflado_1.jpg",
+			"nombre" : "Pantalón Camuflado",
 			"precio" : 200,
 			"detalleUno" : "Algo 1",
 			"detalleDos" : "Algo 2",
