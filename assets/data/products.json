@@ -3,11 +3,11 @@
 		{
 			"img" : "./img/Climbworld_Camuflado_1.jpg",
 			"nombre" : "Pantalón Camuflado",
-			"precio" : 200,
-			"detalleUno" : "Algo 1",
-			"detalleDos" : "Algo 2",
+			"precio" : 600,
+			"detalleUno" : "Rip stop antidesgarro.",
+			"detalleDos" : "Color: Selva",
 			"colores" : ["negro", "blanco"],
-			"urlPago" : "https://www.google.com.ar"
+			"urlPago" : "http://mpago.la/bmHd"
 		},
 		{
 			"img" : "./img/img-1.jpg",
