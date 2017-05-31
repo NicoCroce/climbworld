@@ -243,7 +243,8 @@ $(document).on('click', '.product-element', function() {
     $(this).addClass('is-opened');
 });
 
-$(document).on('click', '#detalleProducto', function() {
+$(document).on('click', '.icon-zoom_out_map', function() {
+    console.log("muestra detalle");
     $('#detalleProducto').removeClass('opened');
     $('body').removeClass('no-scroll');
 });

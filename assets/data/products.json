@@ -1,7 +1,7 @@
 {
 	"products" : [
 		{
-			"img" : "./img/Climbworld_Camuflado_1.jpg",
+			"img" : "./img/camuflado/Climbworld_Camuflado_1.jpg",
 			"nombre" : "Pantalón Camuflado",
 			"precio" : 600,
 			"detalleUno" : "Rip stop antidesgarro.",
