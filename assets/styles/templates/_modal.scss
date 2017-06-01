@@ -1,5 +1,5 @@
 .modal {
-    position: fixed; background: rgba(0, 0, 0, 0.7); width: 100%; height: 100%;
+/*    position: fixed; background: rgba(0, 0, 0, 0.7); width: 100%; height: 100%;
     top: 0; z-index: 1001; opacity: 0; visibility: hidden;
     transition: opacity .4s ease-out;
     .modal-border {
@@ -24,12 +24,13 @@
             img { width: 75%; float: right; }
             .precio { margin-top: 15%; }
             &:last-of-type { margin-top: 20px; }
-        }
+        }*/
+
+        /*opacity: 0; visibility: hidden;*/
     }
 
     /*transform: translate3d(0,-10%,0);*/
     &.opened {
         opacity: 1; visibility: visible;
-        .modal-content { transform: none !important; }
+        /*.modal-content { transform: none !important; }*/
     }
-}

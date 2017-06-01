@@ -151,6 +151,13 @@ $(document).ready(function() {
             }
         }, 1000)
     })();
+
+    var swiper = new Swiper('.swiper-container', {
+        zoom: true,
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev'
+    });
 });
 
 // **********************    END READY    ******************************
@@ -234,11 +241,11 @@ $(document).on('click', '.product-element', function() {
             .replace('{{ detailOne }}', prodDetail.detalleUno)
             .replace('{{ detailTwo }}', prodDetail.detalleDos)
             .replace('{{ price }}', prodDetail.precio)
-            .replace('{{ img }}', prodDetail.img);
+            .replace(/{{ img }}/g, prodDetail.img);
     });
 
     $('#detalleProducto').addClass('opened');
-    $('body').addClass('no-scroll');
+    /*$('body').addClass('no-scroll');*/
 
     $(this).addClass('is-opened');
 });
@@ -246,7 +253,7 @@ $(document).on('click', '.product-element', function() {
 $(document).on('click', '.icon-zoom_out_map', function() {
     console.log("muestra detalle");
     $('#detalleProducto').removeClass('opened');
-    $('body').removeClass('no-scroll');
+    /*$('body').removeClass('no-scroll');*/
 });
 
 function initMap() {

@@ -98,20 +98,30 @@
         </footer>
     </main>
     <div id="detalleProducto" class="modal">
-        <div class="modal-border">
-            <div class="modal-content">
-                <h1 class="title-modal">{{ productName }}</h1>
-                <div class="modal-block">
-                    <h3>Detalle</h3>
-                    <ul>
-                        <li class="detail">{{ detailOne }}</li>
-                        <li class="detail">{{ detailTwo }}</li>
-                    </ul>
-                    <h3 class="precio">Precio: <span>${{ price }}</span></h3>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="swiper-zoom-container">
+                        <img src="./img/camuflado/Climbworld_Camuflado_1.jpg">
+                    </div>
                 </div>
-                <div class="modal-block"><img class="" src="{{ img }}" alt=""></div>
+                <div class="swiper-slide">
+                    <div class="swiper-zoom-container">
+                        <img src="./img/camuflado/Climbworld_Camuflado_1.jpg">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="swiper-zoom-container">
+                        <img src="./img/camuflado/Climbworld_Camuflado_1.jpg">
+                    </div>
+                </div>
             </div>
-        </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-white"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>        
     </div>
     <!-- End of main content -->
 
@@ -124,7 +134,9 @@
     <!-- <script>window.jQuery || document.write('<script src="./js/vendor/jquery.min.js"><\/script>')</script> -->
 
     <!-- build:js ./js/script.js -->
+    
     <script src="js/bundles/min/jquery.min.js"></script>
+    <script src="js/bundles/min/swiper.jquery.min.js"></script>
     <script src="./js/script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <!-- endbuild -->
