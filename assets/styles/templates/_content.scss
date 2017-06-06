@@ -132,7 +132,7 @@ main { height: 100%; }
 		}
 
 		.img-buy { display: table; width: 100%; height: 74%; font-size: toem(30px); color: white; background: rgba(0, 0, 0, 0.06); }
-		.icon-zoom_out_map { color: white; font-size: 50px; position: relative; z-index: 100; opacity: 1; text-align: center; vertical-align: middle; display: table-cell; text-shadow: 2px 2px 2px #000000; }
+		.icon-zoom_out_map { color: white; font-size: 50px; position: relative; z-index: 10; opacity: 1; text-align: center; vertical-align: middle; display: table-cell; text-shadow: 2px 2px 2px #000000; }
 
 		&:hover {
 			img{ transform: scale3d(1.05, 1.05, 1.05); }
@@ -255,6 +255,11 @@ main { height: 100%; }
 		}
 	}
 }
+
+
+.swiper-container { width: 100%; height: 100%;  }
+.swiper-slide { overflow: hidden; }
+
 
 // .options-open {
 // 	.main {

@@ -34,3 +34,12 @@
         opacity: 1; visibility: visible;
         /*.modal-content { transform: none !important; }*/
     }
+
+
+.modal-img {
+    background: rgba(0, 0, 0, 0.7); z-index: 100; padding: 3% 0;
+    .close-modal-img {
+        position: absolute; top: 0; right: 0; background: #f1f1f1; padding: 1%; text-align: center; color: grey; 
+        font-weight: 500; z-index: 10; margin: 10px; font-size: 11px; border-radius: 3px; cursor: pointer;  
+    }
+}

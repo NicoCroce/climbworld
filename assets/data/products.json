@@ -1,7 +1,12 @@
 {
 	"products" : [
 		{
-			"img" : "./img/camuflado/Climbworld_Camuflado_1.jpg",
+			"img" : [
+				"./img/camuflado/Climbworld_Camuflado_1.jpg",
+				"./img/camuflado/Climbworld_Camuflado_2.jpg",
+				"./img/camuflado/Climbworld_Camuflado_3.jpg",
+				"./img/camuflado/Climbworld_Camuflado_4.jpg"
+			],
 			"nombre" : "Pantalón Camuflado",
 			"precio" : 600,
 			"detalleUno" : "Rip stop antidesgarro.",
@@ -10,7 +15,9 @@
 			"urlPago" : "http://mpago.la/bmHd"
 		},
 		{
-			"img" : "./img/img-1.jpg",
+			"img": [
+				"./img/camuflado/Climbworld_Camuflado_1.jpg"
+			], 
 			"nombre" : "Pantalón",
 			"precio" : 200,
 			"detalleUno" : "Algo 1",
@@ -19,7 +26,9 @@
 			"urlPago" : "https://www.google.com.ar"
 		},
 		{
-			"img" : "./img/img-1.jpg",
+			"img": [
+				"./img/camuflado/Climbworld_Camuflado_1.jpg"
+			],
 			"nombre" : "Pantalón",
 			"precio" : 200,
 			"detalleUno" : "Algo 1",
@@ -28,7 +37,9 @@
 			"urlPago" : "https://www.google.com.ar"
 		},
 		{
-			"img" : "./img/img-1.jpg",
+			"img": [
+				"./img/camuflado/Climbworld_Camuflado_1.jpg"
+			],
 			"nombre" : "Pantalón",
 			"precio" : 200,
 			"detalleUno" : "Algo 1",
@@ -37,7 +48,9 @@
 			"urlPago" : "https://www.google.com.ar"
 		},
 		{
-			"img" : "./img/img-1.jpg",
+			"img": [
+				"./img/camuflado/Climbworld_Camuflado_1.jpg"
+			],
 			"nombre" : "Pantalón",
 			"precio" : 200,
 			"detalleUno" : "Algo 1",
@@ -46,7 +59,9 @@
 			"urlPago" : "https://www.google.com.ar"
 		},
 		{
-			"img" : "./img/img-1.jpg",
+			"img": [
+				"./img/camuflado/Climbworld_Camuflado_1.jpg"
+			],
 			"nombre" : "Pantalón",
 			"precio" : 200,
 			"detalleUno" : "Algo 1",
