@@ -6,7 +6,8 @@ $(document).ready(function() {
     });
 
     function setScrollAspect() {
-        console.log('entro');
+        animate_elems();
+        
         if (!isReady) {
             return;
         };
@@ -47,30 +48,27 @@ $(document).ready(function() {
         } else {
             changeSection('contact');
         }
-
-        animate_elems();
     }
-
-    function animate_elems() {
-        var wintop = $(window).scrollTop(), // calculate distance from top of window
-            allElemmentsToAnimate = $('.animateblock'),
-            winheight = $(window).height();
-
-        // loop through each item to check when it animates
-        allElemmentsToAnimate.each(function() {
-            var objectAnimated = $(this);
-
-            if (objectAnimated.hasClass('animated')) {
-                return true;
-            } // if already animated skip to the next item
-
-            var topcoords = objectAnimated.offset().top; // element's distance from top of page in pixels
-
-            if (wintop > (topcoords - (winheight * .9))) {
-                // animate when top of the window is 3/4 above the element
-                objectAnimated.addClass('animated ' + objectAnimated.attr('fxAnimation'));
-            }
-        });
-    } // end animate_elems()
-
 });
+
+function animate_elems() {
+    var wintop = $(window).scrollTop(), // calculate distance from top of window
+        allElemmentsToAnimate = $('.animateblock'),
+        winheight = $(window).height();
+
+    // loop through each item to check when it animates
+    allElemmentsToAnimate.each(function () {
+        var objectAnimated = $(this);
+
+        if (objectAnimated.hasClass('animated')) {
+            return true;
+        } // if already animated skip to the next item
+
+        var topcoords = objectAnimated.offset().top; // element's distance from top of page in pixels
+
+        if (wintop > (topcoords - (winheight * .9))) {
+            // animate when top of the window is 3/4 above the element
+            objectAnimated.addClass('animated ' + objectAnimated.attr('fxAnimation'));
+        }
+    });
+} // end animate_elems()

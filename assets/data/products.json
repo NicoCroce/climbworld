@@ -5,69 +5,49 @@
 				"./img/camuflado/Climbworld_Camuflado_1.jpg",
 				"./img/camuflado/Climbworld_Camuflado_2.jpg",
 				"./img/camuflado/Climbworld_Camuflado_3.jpg",
-				"./img/camuflado/Climbworld_Camuflado_4.jpg"
+				"./img/camuflado/Climbworld_Camuflado_4.jpg",
+				"./img/Instructivo2.png"
 			],
 			"nombre" : "Pantalón Camuflado",
-			"precio" : 600,
+			"precio" : 660,
 			"detalleUno" : "Rip stop antidesgarro.",
 			"detalleDos" : "Color: Selva",
-			"colores" : ["negro", "blanco"],
-			"urlPago" : "http://mpago.la/bmHd"
+			"urlPago" : "http://mpago.la/Dg8L",
+			"urlPayCustom" : "http://mpago.la/csTK"
 		},
 		{
 			"img": [
-				"./img/camuflado/Climbworld_Camuflado_1.jpg"
+				"./img/cargo/climbworld_beige.jpg",
+				"./img/cargo/climbworld_beige_ref.jpg",
+				"./img/cargo/climbworld_colores.jpg",
+				"./img/cargo/climbworld_personal_2.jpg",
+				"./img/cargo/IMG-20170521-WA0013.jpg",
+				"./img/cargo/IMG-20170521-WA0014.jpg",
+				"./img/cargo/IMG-20170521-WA0018.jpg",
+				"./img/cargo/IMG-20170521-WA0021.jpg",
+				"./img/cargo/IMG-20170521-WA0031.jpg",
+				"./img/cargo/IMG-20170522-WA0011.jpg",
+				"./img/cargo/IMG-20170522-WA0012.jpg",
+				"./img/cargo/IMG-20170522-WA0014.jpg",
+				"./img/Instructivo2.png"
 			], 
-			"nombre" : "Pantalón",
-			"precio" : 200,
-			"detalleUno" : "Algo 1",
-			"detalleDos" : "Algo 2",
-			"colores" : ["negro", "blanco"],
-			"urlPago" : "https://www.google.com.ar"
+			"nombre" : "Pantalón Cargo",
+			"precio" : 660,
+			"detalleUno" : "Grafa 70.   8 onzas ",
+			"detalleDos" : "Color: Verde, Negro y Khaky",
+			"urlPago" : "http://mpago.la/hmyH",
+			"urlPayCustom": "http://mpago.la/csTK"
 		},
 		{
 			"img": [
-				"./img/camuflado/Climbworld_Camuflado_1.jpg"
+				"./img/camisas/IMG-20170521-WA0019.jpg"
 			],
-			"nombre" : "Pantalón",
+			"nombre" : "Camisas",
 			"precio" : 200,
 			"detalleUno" : "Algo 1",
 			"detalleDos" : "Algo 2",
-			"colores" : ["negro", "blanco"],
-			"urlPago" : "https://www.google.com.ar"
-		},
-		{
-			"img": [
-				"./img/camuflado/Climbworld_Camuflado_1.jpg"
-			],
-			"nombre" : "Pantalón",
-			"precio" : 200,
-			"detalleUno" : "Algo 1",
-			"detalleDos" : "Algo 2",
-			"colores" : ["negro", "blanco"],
-			"urlPago" : "https://www.google.com.ar"
-		},
-		{
-			"img": [
-				"./img/camuflado/Climbworld_Camuflado_1.jpg"
-			],
-			"nombre" : "Pantalón",
-			"precio" : 200,
-			"detalleUno" : "Algo 1",
-			"detalleDos" : "Algo 2",
-			"colores" : ["negro", "blanco"],
-			"urlPago" : "https://www.google.com.ar"
-		},
-		{
-			"img": [
-				"./img/camuflado/Climbworld_Camuflado_1.jpg"
-			],
-			"nombre" : "Pantalón",
-			"precio" : 200,
-			"detalleUno" : "Algo 1",
-			"detalleDos" : "Algo 2",
-			"colores" : ["negro", "blanco"],
-			"urlPago" : "https://www.google.com.ar"
+			"urlPago" : "https://www.google.com.ar",
+			"urlPayCustom": "http://mpago.la/csTK"
 		}
 	]
 }

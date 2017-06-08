@@ -41,7 +41,7 @@ JS_FILES_BUNDLES 	= path.join(SRC_JAVASCRIPT_BASE, 'bundles') + '/**/*',
 IMAGES_FILES 		= SRC_IMAGES_BASE + '/**/*',
 DATA_FILES 			= SRC_DATA_BASE + '/**/*',
 ICON_FILES 			= SRC_FONTS_BASE + '/**/*',
-JS_FILES_ORDER		= [SRC_JAVASCRIPT_BASE + '/script.js', SRC_JAVASCRIPT_BASE + '/scroll.js'];
+JS_FILES_ORDER = [SRC_JAVASCRIPT_BASE + '/scroll.js', SRC_JAVASCRIPT_BASE + '/script.js'];
 
 var ENVIRONMENT 	= FOLDER_DEV,
 runFirstTime 		= true;
@@ -216,8 +216,8 @@ function copyJsFunction() {
 }
 
 function compressImg () {
-	return gulp.src(SRC_IMAGES_BASE+'/*')
-        .pipe(imagemin())
+	return gulp.src(SRC_IMAGES_BASE+'/**/*')
+        .pipe(imagemin({verbose: true}))
         .pipe(gulp.dest(ENVIRONMENT + '/img'));
 }
 
