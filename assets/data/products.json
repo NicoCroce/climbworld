@@ -32,7 +32,7 @@
 				"./img/Instructivo2.png"
 			], 
 			"nombre" : "Pantalón Cargo",
-			"precio" : 660,
+			"precio" : 425,
 			"detalleUno" : "Grafa 70.   8 onzas ",
 			"detalleDos" : "Color: Verde, Negro y Khaky",
 			"urlPago" : "http://mpago.la/hmyH",
@@ -43,10 +43,10 @@
 				"./img/camisas/IMG-20170521-WA0019.jpg"
 			],
 			"nombre" : "Camisas",
-			"precio" : 200,
-			"detalleUno" : "Algo 1",
-			"detalleDos" : "Algo 2",
-			"urlPago" : "https://www.google.com.ar",
+			"precio" : 425,
+			"detalleUno" : "Grafa",
+			"detalleDos" : "Color: Beige",
+			"urlPago" : "http://mpago.la/Wztd",
 			"urlPayCustom": "http://mpago.la/csTK"
 		}
 	]
