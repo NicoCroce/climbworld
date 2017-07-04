@@ -348,6 +348,11 @@ $(document).on('click', '.icon-zoom_out_map', function () {
     /*$('body').removeClass('no-scroll');*/
 });
 
+$("div, li").click(function(){
+    if ($(this).hasClass("product-element")) { return; }
+    $('.product-element').removeClass('is-opened');
+});
+
 function initMap() {
     var myLatLng = {
         lat: -33.246500,

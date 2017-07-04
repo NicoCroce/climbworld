@@ -6,14 +6,13 @@
 				"./img/camuflado/Climbworld_Camuflado_2.jpg",
 				"./img/camuflado/Climbworld_Camuflado_3.jpg",
 				"./img/camuflado/Climbworld_Camuflado_4.jpg",
-				"./img/Instructivo2.png"
+				"./img/Instructivo2.jpg"
 			],
 			"nombre" : "Pantalón Camuflado",
 			"precio" : 660,
 			"detalleUno" : "Rip stop antidesgarro.",
 			"detalleDos" : "Color: Selva",
-			"urlPago" : "http://mpago.la/Dg8L",
-			"urlPayCustom" : "http://mpago.la/csTK"
+			"urlPago" : "http://mpago.la/Z5EW"
 		},
 		{
 			"img": [
@@ -29,14 +28,13 @@
 				"./img/cargo/IMG-20170522-WA0011.jpg",
 				"./img/cargo/IMG-20170522-WA0012.jpg",
 				"./img/cargo/IMG-20170522-WA0014.jpg",
-				"./img/Instructivo2.png"
+				"./img/Instructivo2.jpg"
 			], 
 			"nombre" : "Pantalón Cargo",
 			"precio" : 425,
 			"detalleUno" : "Grafa 70.   8 onzas ",
 			"detalleDos" : "Color: Verde, Negro y Khaky",
-			"urlPago" : "http://mpago.la/hmyH",
-			"urlPayCustom": "http://mpago.la/csTK"
+			"urlPago" : "http://mpago.la/4kNl"
 		},
 		{
 			"img": [
@@ -46,8 +44,7 @@
 			"precio" : 425,
 			"detalleUno" : "Grafa",
 			"detalleDos" : "Color: Beige",
-			"urlPago" : "http://mpago.la/Wztd",
-			"urlPayCustom": "http://mpago.la/csTK"
+			"urlPago" : "http://mpago.la/T1mR"
 		}
 	]
 }

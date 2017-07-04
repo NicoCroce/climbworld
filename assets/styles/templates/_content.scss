@@ -56,8 +56,8 @@ main { height: 100%; }
 				div {
 					width: 620px; height: 100%; position: absolute; background-size: cover; transition: all, .4s ease-in;
 					margin-right: -7px;
-					&.img1 { background: url(../img/slide/slide1.jpg); background-size: cover; background-repeat: no-repeat; width: 100%;}
-					&.img2 { background: url(../img/slide/slide2.jpg); background-size: cover; background-repeat: no-repeat; width: 100%;}
+					&.img1 { background: url(../img/slide/slide2.jpg); background-size: cover; background-repeat: no-repeat; width: 100%;}
+					&.img2 { background: url(../img/slide/slide1.jpg); background-size: cover; background-repeat: no-repeat; width: 100%;}
 					&.img3 { background: url(../img/slide/slide3.jpg); background-size: cover; background-repeat: no-repeat; width: 100%;}
 				}
 			}
@@ -109,24 +109,20 @@ main { height: 100%; }
 		max-height: 190px; /*font-size: toem(0);*/ background: #f3f3f3;
 		transition: all .3s ease;
 		.urlPay { 
-			transition: none; background: #73A773; font-size: toem(14px);
-			&:first-of-type { border-bottom: 1px solid white; }
-		}
+				position: relative; z-index: 2; background: rgba(23, 115, 23, 0.68); color: white; 
+				display: block; padding: 10px 0; text-align: center; font-weight: bold; text-transform: uppercase;
+				&:hover { background: rgba(23, 115, 23, 0.8); }
+			}
 		/*.img-buy { display: none; }*/
 		// .title-product { font-size: 0; }
 		&.is-opened { 
-			max-height: 700px; font-size: toem(20px);
+			max-height: 900px; font-size: toem(20px);
 			&:first-of-type { margin-top: 0; }
 			ul { 
 				padding: 10px; font-size: toem(14px); margin-left: 20px;
 				li { padding-bottom: 5px; list-style-type: square; }
 			}
 			.precio { padding: 10px; line-height: 1; font-size: toem(20px); }
-			.urlPay { 
-				position: relative; z-index: 2; background: rgba(23, 115, 23, 0.68); color: white; 
-				display: block; padding: 10px 0; text-align: center; font-weight: bold; text-transform: uppercase;
-				&:hover { background: rgba(23, 115, 23, 0.8); }
-			}
 			.hover-element { opacity: 1; }
 			img { filter: grayscale(0); }
 			.go-to-slide { pointer-events: auto; }
@@ -157,7 +153,7 @@ main { height: 100%; }
 //*****************************************************************************************************************************
 
 .block-text {
-	width: 60%; margin: 5%; margin-left: -25%;
+	margin: 5%; margin-left: -25%;
 	.title-company-section { font-size: toem(30px); text-transform: uppercase; margin-bottom: 15px; font-weight: 700; }
 	.text-company { line-height: 2; }
 	a, span { color: #484848; font-weight: 800; text-decoration: underline; }
@@ -205,7 +201,7 @@ main { height: 100%; }
 }
 
 .menu-mobile {
-	height: 200%; position: fixed; z-index: 10; width: 70%; background: rgb(24, 24, 26);
+	height: 200%; position: fixed; z-index: 100; width: 70%; background: rgb(24, 24, 26);
 	transition: all .4s ease;
 	opacity: 1;
 	&.hidden {
