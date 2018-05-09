@@ -110,7 +110,10 @@ var isReady = false,
 //******************************************    onLoad    ******************************************
 
 $(window).on("load", function () {
-    initMap();
+    setTimeout(function(){
+        initMap();
+    }, 1000);
+    
     getDataProducts();
 });
 

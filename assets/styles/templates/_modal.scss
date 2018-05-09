@@ -27,13 +27,14 @@
         }*/
 
         /*opacity: 0; visibility: hidden;*/
-    }
+    /* } */
 
     /*transform: translate3d(0,-10%,0);*/
     &.opened {
         opacity: 1; visibility: visible;
         /*.modal-content { transform: none !important; }*/
     }
+}
 
 
 .modal-img {
