@@ -9,7 +9,7 @@
 				"./img/Instructivo2.jpg"
 			],
 			"nombre" : "Pantalón Camuflado",
-			"precio" : 660,
+			"precio" : "$770",
 			"detalleUno" : "Rip stop antidesgarro.",
 			"detalleDos" : "Color: Selva",
 			"urlPago" : "http://mpago.la/Z5EW"
@@ -31,7 +31,7 @@
 				"./img/Instructivo2.jpg"
 			], 
 			"nombre" : "Pantalón Cargo",
-			"precio" : 425,
+			"precio" : "$476",
 			"detalleUno" : "Grafa 70.   8 onzas ",
 			"detalleDos" : "Color: Verde, Negro y Khaky",
 			"urlPago" : "http://mpago.la/4kNl"
@@ -41,7 +41,7 @@
 				"./img/camisas/IMG-20170521-WA0019.jpg"
 			],
 			"nombre" : "Camisas",
-			"precio" : 425,
+			"precio" : "Preguntar",
 			"detalleUno" : "Grafa",
 			"detalleDos" : "Color: Beige",
 			"urlPago" : "http://mpago.la/T1mR"

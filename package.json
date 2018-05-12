@@ -20,14 +20,13 @@
   "homepage": "https://github.com/NicoCroce/UI-Premium-Framework",
   "devDependencies": {
     "del": "^2.2.0",
-    "gulp": "gulpjs/gulp#4.0",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean-css": "^2.0.13",
     "gulp-cli": "^1.2.2",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^4.0.0",
     "gulp-if": "^2.0.1",
-    "gulp-imagemin": "^3.1.1",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.0.0",
@@ -38,6 +37,7 @@
     "merge-stream": "^1.0.0"
   },
   "dependencies": {
+    "gulp-imagemin": "^4.1.0",
     "gulp-install": "^0.6.0",
     "node-sass": "^4.9.0"
   }
